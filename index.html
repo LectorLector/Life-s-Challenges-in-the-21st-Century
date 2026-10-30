@@ -1,0 +1,1431 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>二十一世紀線</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="末班車上的六個人生難題，終點揭曉你是八種夜行者中的哪一種">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Noto+Sans+TC:wght@500;900&family=Noto+Serif+TC:wght@400;600&display=swap">
+<style>
+/* 版面概念：一條斜向的構成主義地鐵線。每一站＝左側色塊構圖（直書站名）＋右側逐步展開的旅程手札。 */
+:root{
+  --paper:#E2E0D8; --paper-2:#D5D2C8; --paper-3:#C9C5BA;
+  --ink:#2E2D2A; --ink-soft:#5B5852; --line:rgba(46,45,42,.18);
+  --clay:#A8655A;   /* 莫蘭迪化的構成主義紅 */
+  --ochre:#C3A36A; --sage:#94A08B; --slate:#7A8B99; --rose:#C6A49E; --plum:#8B7983; --fog:#B7B1A6;
+  --on-accent:#F3F0E9;
+  --f-display:"Big Shoulders Display","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-head:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-body:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --step--1:clamp(.82rem,.78rem + .2vw,.9rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.08rem);
+  --step-1:clamp(1.2rem,1.1rem + .5vw,1.45rem);
+  --step-2:clamp(1.55rem,1.3rem + 1.2vw,2.2rem);
+  --step-3:clamp(2.2rem,1.6rem + 3vw,4rem);
+  --step-4:clamp(3rem,2rem + 6vw,7.5rem);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#1F1E1C; --paper-2:#2A2926; --paper-3:#35332F;
+  --ink:#E7E2D7; --ink-soft:#ABA59A; --line:rgba(231,226,215,.16);
+  --clay:#BF7B6F; --ochre:#CDB078; --sage:#A1AC97; --slate:#8E9EAC; --rose:#C9A8A2; --plum:#A28F99; --fog:#77716A;
+  --on-accent:#1F1E1C; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#1F1E1C; --paper-2:#2A2926; --paper-3:#35332F;
+  --ink:#E7E2D7; --ink-soft:#ABA59A; --line:rgba(231,226,215,.16);
+  --clay:#BF7B6F; --ochre:#CDB078; --sage:#A1AC97; --slate:#8E9EAC; --rose:#C9A8A2; --plum:#A28F99; --fog:#77716A;
+  --on-accent:#1F1E1C; color-scheme:dark }
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+
+/* ---------- 頂欄 ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;align-items:center;gap:14px;
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:var(--paper);border-bottom:2px solid var(--ink)}
+.brand{display:flex;align-items:baseline;gap:8px;font-family:var(--f-head);font-weight:900;letter-spacing:.06em;white-space:nowrap;background:none;border:0;padding:0;cursor:pointer}
+.brand b{font-family:var(--f-display);font-weight:900;font-size:1.35rem;background:var(--clay);color:var(--on-accent);padding:0 .35em;letter-spacing:.02em}
+.brand span{font-size:.95rem}
+.minimap{flex:1;display:flex;align-items:center;gap:0;min-width:0;max-width:340px;margin-left:auto}
+.minimap i{flex:1;height:3px;background:var(--line);position:relative}
+.minimap i::after{content:"";position:absolute;right:-5px;top:-4px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--ink-soft)}
+.minimap i.done{background:var(--ink)}
+.minimap i.done::after{background:var(--ink);border-color:var(--ink)}
+.minimap i.now::after{background:var(--clay);border-color:var(--clay);box-shadow:0 0 0 4px color-mix(in srgb,var(--clay) 25%,transparent)}
+.sound{display:flex;align-items:center;gap:8px;margin-left:10px;border:2px solid var(--ink);background:var(--paper);padding:4px 10px 4px 6px;cursor:pointer;font-family:var(--f-head);font-size:.82rem;font-weight:500;max-width:46vw}
+.sound .eq{display:flex;align-items:flex-end;gap:2px;height:16px;width:18px;flex:none}
+.sound .eq span{width:4px;background:var(--clay);height:4px;transition:height .2s}
+.sound.on .eq span{animation:eq 1.1s infinite var(--ease)}
+.sound.on .eq span:nth-child(2){animation-delay:-.4s}.sound.on .eq span:nth-child(3){animation-delay:-.7s}
+@keyframes eq{0%,100%{height:4px}50%{height:15px}}
+.sound .lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){.minimap{display:none}.brand span{display:none}.sound{margin-left:auto}}
+
+/* ---------- 場景 ---------- */
+.scene{display:none}
+.scene.active{display:block;animation:sceneIn .7s var(--ease)}
+@keyframes sceneIn{from{opacity:.0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1240px;margin:0 auto}
+
+/* ---------- 封面 ---------- */
+.cover{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);padding-block:clamp(24px,5vw,64px);align-items:center}
+.cover-art{position:relative;aspect-ratio:4/5;max-width:100%;background:var(--paper-2);overflow:hidden}
+.cover-art svg{position:absolute;inset:0;width:100%;height:100%}
+.eyebrow{font-family:var(--f-display);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.9rem;color:var(--clay)}
+.cover h1{font-family:var(--f-head);font-weight:900;font-size:var(--step-4);line-height:.95;letter-spacing:-.01em;margin-top:.15em}
+.cover h1 em{font-style:normal;display:block;font-family:var(--f-display);font-weight:900;font-size:.62em;letter-spacing:.04em;color:var(--ink-soft)}
+.cover .lede{font-size:var(--step-1);line-height:1.7;margin-top:1rem;max-width:30em}
+.manifest{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-top:1.5rem;background:var(--ink);border:2px solid var(--ink)}
+.manifest div{background:var(--paper);padding:.6rem .7rem;font-family:var(--f-head);font-size:.85rem;line-height:1.4}
+.manifest b{display:block;font-family:var(--f-display);font-size:1.6rem;font-weight:900;line-height:1}
+.ticket-form{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.ticket-form label{flex-basis:100%;font-family:var(--f-head);font-size:.85rem;color:var(--ink-soft)}
+.ticket-form input{flex:1 1 180px;min-width:0;font:inherit;font-family:var(--f-head);padding:.7rem .9rem;border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.note{font-family:var(--f-head);font-size:var(--step--1);color:var(--ink-soft);margin-top:.8rem;line-height:1.6}
+
+/* ---------- 按鈕 ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--f-head);font-weight:900;letter-spacing:.06em;
+  padding:.75rem 1.2rem;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);box-shadow:4px 4px 0 var(--clay)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--clay)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--clay)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:none}
+.btn.ghost:hover{background:var(--paper-2)}
+.btn .arr{font-family:var(--f-display);font-size:1.2em;line-height:1}
+
+/* ---------- 路線圖 ---------- */
+.map{padding-block:clamp(28px,5vw,64px)}
+.map-head{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+.map-head h2{font-family:var(--f-head);font-weight:900;font-size:var(--step-3);line-height:1}
+.ticket{display:grid;grid-template-columns:auto auto;gap:2px 14px;border:2px dashed var(--ink-soft);padding:.6rem .9rem;font-family:var(--f-head);font-size:.82rem;line-height:1.5;background:var(--paper-2)}
+.ticket dt{color:var(--ink-soft)} .ticket dd{margin:0;font-weight:900}
+.route{list-style:none;margin:clamp(28px,5vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));position:relative}
+.route::before{content:"";position:absolute;left:calc(100%/14);right:calc(100%/14);top:34px;height:6px;background:var(--ink)}
+.stop{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:0 4px}
+.node{position:relative;z-index:1;width:74px;height:74px;display:grid;place-items:center;background:var(--paper);border:3px solid var(--ink);border-radius:50%;cursor:default}
+.node svg{width:52px;height:52px}
+.stop.next .node{border-color:var(--clay);box-shadow:0 0 0 6px color-mix(in srgb,var(--clay) 22%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px color-mix(in srgb,var(--clay) 8%,transparent)}}
+.stop .num{font-family:var(--f-display);font-weight:900;font-size:1rem;letter-spacing:.1em;color:var(--ink-soft)}
+.stop .nm{font-family:var(--f-head);font-weight:900;font-size:1.05rem;line-height:1.2}
+.stop .bk{font-family:var(--f-head);font-size:.78rem;color:var(--ink-soft);line-height:1.35}
+.stop.done .nm{color:var(--ink)}
+.stop.todo{opacity:.6}
+.train{position:absolute;top:18px;z-index:2;width:46px;height:38px;transition:left 1.4s var(--ease);pointer-events:none}
+.map-cta{margin-top:clamp(28px,5vw,48px);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.map-cta .hint{font-family:var(--f-head);font-size:.9rem;color:var(--ink-soft);flex-basis:100%}
+@media (max-width:760px){
+  .route{grid-template-columns:1fr;gap:18px}
+  .route::before{left:35px;right:auto;top:20px;bottom:20px;width:6px;height:auto}
+  .stop{flex-direction:row;text-align:left;align-items:center;gap:14px}
+  .stop .txt{display:flex;flex-direction:column}
+  .train{display:none}
+}
+
+/* ---------- 站點 ---------- */
+.station{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);padding-block:clamp(20px,4vw,48px)}
+.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);align-self:start;aspect-ratio:4/5;max-width:100%;background:var(--paper-2);overflow:hidden}
+.panel svg.art{position:absolute;inset:0;width:100%;height:100%}
+.panel .vname i{font-style:normal;display:block;line-height:1.08}
+.panel .vname{position:absolute;right:5%;top:5%;display:flex;flex-direction:column;align-items:center;background:var(--paper);padding:.18em .14em;border:2px solid var(--ink);font-family:var(--f-head);font-weight:900;font-size:clamp(2.2rem,1.4rem + 3vw,4.4rem);line-height:1;letter-spacing:.08em;color:var(--ink);text-shadow:0 0 0 transparent}
+.panel .vnum{position:absolute;left:5%;bottom:3%;font-family:var(--f-display);font-weight:900;font-size:clamp(4rem,3rem + 6vw,9rem);line-height:.8;color:var(--ink);letter-spacing:-.02em}
+.panel .vtag{position:absolute;left:5%;top:5%;font-family:var(--f-display);font-weight:800;letter-spacing:.2em;font-size:.85rem;background:var(--ink);color:var(--paper);padding:.15em .6em}
+@media (max-width:860px){
+  .station{grid-template-columns:1fr}
+  .panel{position:relative;top:0;aspect-ratio:16/10}
+  .panel .vname{font-size:clamp(1.8rem,7vw,3rem)}
+  .panel .vnum{font-size:clamp(3.4rem,14vw,6rem)}
+}
+.log{display:flex;flex-direction:column;gap:clamp(22px,3vw,34px);min-width:0;padding-bottom:30vh}
+.block{border-top:2px solid var(--ink);padding-top:1rem;animation:blockIn .8s var(--ease) both}
+@keyframes blockIn{from{opacity:.2;transform:translateY(18px)}to{opacity:1;transform:none}}
+.block .tag{display:inline-block;font-family:var(--f-display);font-weight:800;letter-spacing:.18em;font-size:.82rem;text-transform:uppercase;color:var(--clay);margin-bottom:.4rem}
+.block h2{font-family:var(--f-head);font-weight:900;font-size:var(--step-3);line-height:1.08}
+.block h3{font-family:var(--f-head);font-weight:900;font-size:var(--step-1);line-height:1.35;margin-bottom:.4rem}
+.question{font-family:var(--f-head);font-weight:500;font-size:var(--step-2);line-height:1.4;margin-top:.6rem;max-width:22em}
+.prose{max-width:38em}
+.prose p+p{margin-top:.8em}
+.plate{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0;margin-top:1.2rem;border:2px solid var(--ink);max-width:38em}
+.plate .spine{width:54px;background:var(--clay);position:relative}
+.plate .spine span{position:absolute;inset:10px 0;writing-mode:vertical-rl;margin:auto;font-family:var(--f-display);font-weight:900;letter-spacing:.2em;color:var(--on-accent);font-size:.8rem;text-align:center}
+.plate .meta{padding:.8rem 1rem;font-family:var(--f-head);line-height:1.5;min-width:0}
+.plate .en{font-family:var(--f-display);font-weight:800;font-size:1.25rem;letter-spacing:.02em;line-height:1.15}
+.plate .zh{font-weight:900;font-size:1rem;margin-top:.2rem}
+.plate .by{font-size:.85rem;color:var(--ink-soft)}
+.plate .thesis{margin-top:.5rem;font-family:var(--f-body);font-size:.95rem}
+.chip{display:inline-flex;align-items:center;gap:.5em;margin-top:1rem;font-family:var(--f-head);font-size:.82rem;line-height:1.5;color:var(--ink-soft);border-left:4px solid var(--ochre);padding:.2rem .7rem;max-width:38em}
+.vignette{font-size:var(--step-1);line-height:1.8;max-width:30em;padding-left:1rem;border-left:6px solid var(--slate)}
+.choices{display:grid;gap:10px;margin-top:1.2rem;max-width:38em}
+.choice{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:stretch;text-align:left;border:2px solid var(--ink);background:var(--paper);cursor:pointer;padding:0;transition:background .2s,transform .2s var(--ease)}
+.choice .k{display:grid;place-items:center;background:var(--ink);color:var(--paper);font-family:var(--f-display);font-weight:900;font-size:1.3rem}
+.choice .t{padding:.7rem .9rem;font-family:var(--f-head);font-weight:500;line-height:1.5}
+.choice:hover:not([disabled]){transform:translateX(4px);background:var(--paper-2)}
+.choice[disabled]{cursor:default;opacity:.42}
+.choice.picked{opacity:1;background:var(--paper-2)}
+.choice.picked .k{background:var(--clay);color:var(--on-accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:1rem}
+.card{display:block;width:100%;perspective:1400px;border:0;padding:0;background:none;text-align:left;cursor:pointer;font:inherit}
+.card .in{display:grid;width:100%;min-height:13rem;transition:transform .8s var(--ease);transform-style:preserve-3d}
+.card.flipped .in{transform:rotateY(180deg)}
+.card .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--ink);padding:.9rem 1rem;display:flex;flex-direction:column}
+.card .front{background:var(--c,var(--slate));color:var(--on-accent);justify-content:space-between;gap:1rem}
+.card .front .n{font-family:var(--f-display);font-weight:900;font-size:3.2rem;line-height:.9}
+.card .front .kw{font-family:var(--f-head);font-weight:900;font-size:1.25rem;line-height:1.3}
+.card .front .tap{font-family:var(--f-head);font-size:.75rem;letter-spacing:.1em;opacity:.85}
+.card .back{background:var(--paper);transform:rotateY(180deg);font-size:.93rem;line-height:1.75}
+.card .back b{font-family:var(--f-head);font-weight:900;display:block;margin-bottom:.3rem;font-size:1rem;line-height:1.4}
+.card.lab .front{background:var(--ink);color:var(--paper)}
+.card.lab .front .n{font-size:1.1rem;letter-spacing:.2em;color:var(--ochre)}
+.counter{font-family:var(--f-head);font-size:.85rem;color:var(--ink-soft);margin-top:.6rem}
+.quote{font-family:var(--f-head);font-weight:900;font-size:var(--step-2);line-height:1.45;max-width:20em;position:relative;padding-left:1.2em}
+.quote::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;width:.42em;background:var(--clay)}
+.earn{display:flex;align-items:center;gap:16px;margin-top:1.4rem;font-family:var(--f-head);font-size:.95rem}
+.earn svg{width:72px;height:72px;flex:none;animation:earn 1.2s var(--ease) both}
+@keyframes earn{from{transform:scale(.2) rotate(-90deg);opacity:0}to{transform:none;opacity:1}}
+.transfer{margin-top:1.4rem;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;background:var(--paper-2);padding:.9rem 1rem;max-width:38em;font-family:var(--f-head);font-size:.9rem;line-height:1.65}
+.transfer .sign{font-family:var(--f-display);font-weight:900;background:var(--ochre);color:var(--ink);padding:.1em .5em;letter-spacing:.12em;font-size:.8rem;white-space:nowrap}
+.actions{margin-top:1.3rem;display:flex;flex-wrap:wrap;gap:12px}
+.care{border:2px solid var(--slate);background:var(--paper-2);padding:1rem 1.1rem;max-width:38em;font-family:var(--f-head);font-size:.93rem;line-height:1.7}
+.care h3{font-size:1.05rem}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:.6rem}
+.lines div{background:var(--paper);border:1px solid var(--line);padding:.45rem .6rem;line-height:1.35}
+.lines b{font-family:var(--f-display);font-size:1.5rem;font-weight:900;display:block;user-select:all}
+.disclaimer{font-family:var(--f-head);font-size:.8rem;color:var(--ink-soft);margin-top:.8rem;max-width:38em}
+
+/* ---------- 終點 ---------- */
+.finale{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);padding-block:clamp(24px,5vw,56px);align-items:start}
+.poster{aspect-ratio:4/5;max-width:100%;background:var(--paper-2);position:relative;overflow:hidden}
+.poster svg{position:absolute;inset:0;width:100%;height:100%}
+.journey{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:0;border-top:2px solid var(--ink)}
+.journey li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--line);font-family:var(--f-head);font-size:.93rem;line-height:1.5}
+.journey svg{width:44px;height:44px}
+.journey b{font-weight:900}
+.shelf{width:100%;border-collapse:collapse;font-family:var(--f-head);font-size:.88rem;line-height:1.5;margin-top:.8rem}
+.shelf th,.shelf td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+.shelf th{font-weight:900;border-bottom:2px solid var(--ink)}
+.shelf td:first-child{font-family:var(--f-display);font-weight:900;font-size:1.05rem;color:var(--clay)}
+.tablebox{overflow-x:auto;max-width:100%}
+@media (max-width:860px){.cover,.finale{grid-template-columns:1fr}.cover-art{aspect-ratio:5/4}}
+
+/* ---------- 動態 ---------- */
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 60s linear infinite}
+.spin-r{transform-box:fill-box;transform-origin:center;animation:spin 90s linear infinite reverse}
+.drift{animation:drift 9s ease-in-out infinite alternate}
+.drift2{animation:drift 12s ease-in-out infinite alternate-reverse}
+.breathe{transform-box:fill-box;transform-origin:center;animation:breathe 5s ease-in-out infinite}
+.blink{animation:blink 3.4s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(10px,-8px)}}
+@keyframes breathe{50%{transform:scale(1.06)}}
+@keyframes blink{50%{opacity:.25}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+/* ===== 遊戲版 ===== */
+.hud{display:flex;gap:6px;margin-left:auto;align-items:center}
+.hole{width:26px;height:26px;border-radius:50%;border:2px dashed var(--ink-soft);display:grid;place-items:center;background:var(--paper-2)}
+.hole.on{border:2px solid var(--ink);background:var(--paper)}
+.hole svg{width:20px;height:20px}
+.hole.punch{animation:punch .6s var(--ease)}
+@keyframes punch{0%{transform:scale(.3)}60%{transform:scale(1.25)}100%{transform:none}}
+@media (max-width:640px){.hole{width:20px;height:20px}.hole svg{width:15px;height:15px}.hud{gap:3px}.sound .lbl{display:none}}
+.cover-copy{min-width:0}
+.lede.small{font-size:var(--step-0);margin-top:.7rem;color:var(--ink-soft)}
+.friend{display:grid;gap:.2rem;border:2px solid var(--ink);background:var(--paper-2);padding:.8rem 1rem;margin-bottom:1.2rem;font-family:var(--f-head);line-height:1.5}
+.friend .ftag{font-family:var(--f-display);font-weight:800;letter-spacing:.16em;font-size:.8rem;color:var(--clay)}
+.friend b{font-size:1.5rem;font-weight:900}
+.friend em{font-style:normal;font-weight:900;margin-top:.2rem}
+
+.stage{min-width:0;display:flex;flex-direction:column;gap:1.1rem;padding-bottom:40vh}
+.st-head h2{font-family:var(--f-head);font-weight:900;font-size:var(--step-3);line-height:1.05;margin-top:.1em}
+.carenote{margin-top:.6rem;font-family:var(--f-head);font-size:.85rem;line-height:1.6;color:var(--ink-soft);border-left:4px solid var(--slate);padding-left:.7rem}
+.narr{display:flex;flex-direction:column;gap:.35rem;max-width:32em}
+.ln{font-size:var(--step-1);line-height:1.7;animation:lnIn .5s var(--ease) both}
+@keyframes lnIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.prompt{font-family:var(--f-head);font-weight:900;font-size:var(--step-1)}
+.choices[hidden]{display:none!important}
+.choices{display:grid;gap:10px;max-width:36em;animation:lnIn .5s var(--ease) both}
+.after{display:flex;flex-direction:column;gap:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* 求籤機 */
+.fortune{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end}
+.machine{width:170px;height:210px;background:var(--clay);border:3px solid var(--ink);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 10px;color:var(--on-accent);font-family:var(--f-head);font-weight:900;box-shadow:8px 8px 0 var(--ink)}
+.machine .mtop{font-size:1.4rem;letter-spacing:.2em}
+.machine .mslot{width:70%;height:12px;background:var(--ink);border-radius:6px}
+.machine .mnote{font-size:.8rem;background:var(--paper);color:var(--ink);padding:.15em .5em;transform:rotate(-4deg)}
+.machine.shake{animation:shake .85s}
+@keyframes shake{10%,50%,90%{transform:translateX(-6px) rotate(-2deg)}30%,70%{transform:translateX(6px) rotate(2deg)}}
+.slip{width:150px;min-height:210px;background:var(--paper);border:2px solid var(--ink);padding:12px;display:flex;flex-direction:column;gap:6px;font-family:var(--f-head)}
+.slip.drop{animation:drop .6s var(--ease)}
+@keyframes drop{from{transform:translateY(-30px) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+.slip .sn{font-weight:900;font-size:1.1rem}
+.slip .sg{align-self:flex-start;background:var(--ink);color:var(--paper);padding:0 .5em;font-weight:900}
+.slip .st{font-family:var(--f-body);font-size:1.05rem;line-height:1.6;margin-top:.3rem}
+
+/* 萬一泡泡 */
+.bubbles{position:relative;height:340px;max-width:560px;background:var(--paper-2);border:2px solid var(--ink);overflow:hidden;transition:background .6s}
+.bubbles.multiply{background:color-mix(in srgb,var(--rose) 30%,var(--paper-2))}
+.bubbles.arrived{background:color-mix(in srgb,var(--sage) 22%,var(--paper-2))}
+.bb-hud{position:absolute;inset:0 0 auto;display:flex;justify-content:space-between;padding:8px 12px;font-family:var(--f-head);font-size:.85rem;z-index:2;background:var(--paper);border-bottom:2px solid var(--ink)}
+.bb-hud b{font-family:var(--f-display);font-size:1.2rem}
+.bb-tip{position:absolute;left:12px;bottom:10px;font-family:var(--f-head);font-weight:900;color:var(--ink-soft);z-index:2;pointer-events:none}
+.bub{position:absolute;bottom:-60px;padding:.55em .9em;border-radius:999px;border:2px solid var(--ink);background:var(--rose);color:var(--ink);font-family:var(--f-head);font-weight:900;font-size:.95rem;cursor:pointer;white-space:nowrap;animation:rise 8s linear forwards}
+.bub.small{font-size:.78rem;background:var(--clay);color:var(--on-accent)}
+.bub.pop{animation:pop .26s forwards}
+.bub.fade{opacity:.25;transition:opacity 2s}
+@keyframes rise{to{transform:translateY(-430px)}}
+@keyframes pop{to{transform:scale(1.6);opacity:0}}
+
+/* 販賣機 */
+.vend{max-width:560px;border:2px solid var(--ink);background:var(--paper-2);padding:14px;display:grid;gap:10px}
+.caps{display:flex;flex-wrap:wrap;gap:8px}
+.caps span{font-family:var(--f-head);font-weight:900;font-size:.9rem;padding:.35em 1em;border-radius:999px;background:var(--c);color:var(--on-accent);border:2px solid var(--ink)}
+.dose{width:100%;height:auto;background:var(--paper);border:1px solid var(--line)}
+.dial{font-family:var(--f-head);font-weight:900}.dial b{font-family:var(--f-display);font-size:1.4rem;margin-left:.3em}
+#dose{width:100%;accent-color:var(--clay)}
+.readout{display:flex;gap:18px;font-family:var(--f-head);font-size:.9rem}
+.readout i{display:inline-block;width:14px;height:4px;margin-right:6px;vertical-align:middle}
+
+/* 疼痛 */
+.painq{max-width:520px;border:2px solid var(--ink);background:var(--paper-2);padding:16px;display:grid;gap:10px;animation:lnIn .5s var(--ease) both}
+.pq{font-family:var(--f-head);font-weight:900;font-size:var(--step-1);line-height:1.5}
+.pnum{font-family:var(--f-display);font-weight:900;font-size:5rem;line-height:1;color:var(--clay)}
+#pr{width:100%;accent-color:var(--clay)}
+.pscale{display:flex;justify-content:space-between;font-family:var(--f-head);font-size:.8rem;color:var(--ink-soft)}
+.painsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:520px;border:2px solid var(--ink)}
+.painsum div{padding:.7rem;text-align:center;font-family:var(--f-head);background:var(--paper)}
+.painsum div+div{border-left:2px solid var(--ink)}
+.painsum b{display:block;font-family:var(--f-display);font-size:3.2rem;line-height:1;color:var(--clay)}
+
+/* 手機對話 */
+.phone{max-width:380px;border:3px solid var(--ink);border-radius:26px;background:var(--paper);overflow:hidden}
+.ph-top{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:2px solid var(--ink);background:var(--paper-2);font-family:var(--f-head)}
+.av{width:34px;height:34px;border-radius:50%;background:var(--slate);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-head);font-weight:900;flex:none}
+.av.big{width:58px;height:58px;font-size:1.4rem;background:var(--plum)}
+.ph-body{padding:14px;display:flex;flex-direction:column;gap:8px;min-height:260px;font-family:var(--f-head);font-size:.95rem;line-height:1.55}
+.day,.sys{align-self:center;font-size:.75rem;color:var(--ink-soft)}
+.sys.heart{color:var(--clay);font-weight:900;font-size:.85rem}
+.msg{max-width:80%;padding:.5em .8em;border-radius:16px;animation:lnIn .4s var(--ease) both}
+.msg.them{align-self:flex-start;background:var(--paper-2);border:1.5px solid var(--line)}
+.msg.me{align-self:flex-end;background:var(--slate);color:var(--on-accent)}
+.typing{display:flex;gap:4px;padding:.8em}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--ink-soft);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+
+/* 交友卡 */
+.profile{max-width:440px;border:2px solid var(--ink);background:var(--paper-2);padding:14px;display:grid;gap:12px}
+.pf-top{display:flex;gap:12px;align-items:center;font-family:var(--f-head)}
+.pf-top b{display:block;font-size:1.3rem;font-weight:900}
+.pf-top em{font-style:normal;font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--clay)}
+.traits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.trait{min-height:110px;border:2px solid var(--ink);background:var(--plum);color:var(--on-accent);cursor:pointer;padding:8px;font-family:var(--f-head);display:grid;place-items:center;text-align:center;transition:background .3s}
+.trait .q{font-family:var(--f-display);font-size:2.4rem;font-weight:900}
+.trait .a{display:none;font-size:.85rem;line-height:1.45}
+.trait .a b{display:block;font-size:1rem}
+.trait.open{background:var(--paper);color:var(--ink)}
+.trait.open .q{display:none}.trait.open .a{display:block}
+.pf-tip{font-family:var(--f-head);font-size:.82rem;color:var(--ink-soft)}
+.bigq{font-family:var(--f-head);font-weight:900;font-size:var(--step-3);line-height:1.2;animation:lnIn .6s var(--ease) both}
+
+/* 車票存根 */
+.stub{display:grid;grid-template-columns:96px minmax(0,1fr);max-width:36em;border:2px solid var(--ink);background:var(--paper);animation:stubIn .7s var(--ease) both}
+@keyframes stubIn{from{transform:rotateX(70deg);opacity:0}to{transform:none;opacity:1}}
+.stub-l{border-right:2px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px;background:var(--paper-2)}
+.stub-l svg{width:60px;height:60px}
+.stub-l span{font-family:var(--f-display);font-weight:900;letter-spacing:.1em}
+.stub-r{padding:.8rem 1rem;font-size:.95rem;line-height:1.75}
+.stub-tag{display:block;font-family:var(--f-head);font-size:.75rem;color:var(--clay);font-weight:900;letter-spacing:.1em;margin-bottom:.2rem}
+.stub-b{display:block;font-family:var(--f-head);font-size:.8rem;color:var(--ink-soft);margin-top:.3rem}
+
+/* 行駛過場 */
+.ride{position:fixed;inset:0;z-index:80;background:var(--ink);color:var(--paper);display:grid;place-items:center;cursor:pointer;animation:fadeIn .35s both;padding:max(16px,env(safe-area-inset-left,0px))}
+.ride.out{animation:fadeOut .45s both}
+@keyframes fadeIn{from{opacity:0}}@keyframes fadeOut{to{opacity:0}}
+.ride-in{width:min(560px,100%);display:grid;gap:14px;text-align:left}
+.rtime{font-family:var(--f-display);font-weight:900;font-size:clamp(3rem,10vw,6rem);line-height:1;color:var(--ochre)}
+.rtrack{height:8px;background:color-mix(in srgb,var(--paper) 25%,transparent);position:relative;overflow:hidden}
+.rcar{position:absolute;top:0;left:-30%;width:30%;height:100%;background:var(--clay);animation:car 1.9s var(--ease) forwards}
+@keyframes car{to{left:100%}}
+.rnext{font-family:var(--f-head);font-size:1rem;opacity:.75;letter-spacing:.2em}
+.rname{font-family:var(--f-head);font-weight:900;font-size:clamp(2.4rem,8vw,4.6rem);line-height:1.1}
+.rtokens{display:flex;gap:10px;flex-wrap:wrap}
+.rtokens span{width:64px;height:64px;background:var(--paper);border-radius:50%;display:grid;place-items:center;animation:earn .8s var(--ease) both}
+.rtokens svg{width:46px;height:46px}
+@keyframes earn{from{transform:scale(.2) rotate(-90deg);opacity:0}to{transform:none;opacity:1}}
+
+/* 結果 */
+.result{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(20px,4vw,56px);padding-block:clamp(24px,4vw,48px);align-items:start}
+.r-art .poster{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;border:2px solid var(--ink)}
+.r-art .poster svg{position:absolute;inset:0;width:100%;height:100%}
+.p-name{position:absolute;left:4%;top:3%;font-family:var(--f-head);font-weight:900;background:var(--ink);color:var(--paper);padding:.1em .5em}
+.p-en{position:absolute;right:4%;bottom:3%;font-family:var(--f-display);font-weight:900;font-size:1.3rem;letter-spacing:.06em;background:var(--paper);padding:.05em .4em}
+.r-ep{font-family:var(--f-head);font-weight:900;color:var(--clay);font-size:var(--step-1);margin-top:1rem}
+.r-name{font-family:var(--f-head);font-weight:900;font-size:var(--step-4);line-height:1}
+.r-quote{font-family:var(--f-head);font-weight:500;font-size:var(--step-2);line-height:1.45;margin-top:.8rem}
+.r-desc{margin-top:.8rem;max-width:34em}
+.r-traits{margin:1.2rem 0 0;display:grid;border-top:2px solid var(--ink)}
+.r-traits div{display:grid;grid-template-columns:7em minmax(0,1fr);gap:12px;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.r-traits dt{font-family:var(--f-head);font-weight:900}.r-traits dd{margin:0}
+.share{margin-top:1.4rem;border:2px solid var(--ink);padding:1rem;background:var(--paper-2)}
+.sh-h{font-family:var(--f-head);font-weight:900;margin-bottom:.6rem}
+.sh-row{display:flex;flex-wrap:wrap;gap:8px}
+.sh{font-family:var(--f-head);font-weight:900;font-size:.92rem;padding:.6rem 1rem;border:2px solid var(--ink);background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer}
+.sh:hover{background:var(--ink);color:var(--paper)}
+.sh.ig{background:var(--clay);color:var(--on-accent)}
+.sh-msg{font-family:var(--f-head);font-size:.85rem;color:var(--ink-soft);margin-top:.6rem;min-height:1.2em}
+.copybox{width:100%;font:inherit;margin-top:.3rem;padding:.3rem;border:1px solid var(--ink);background:var(--paper);color:var(--ink)}
+.r-more{padding-bottom:64px}
+.card-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.result{grid-template-columns:1fr}.card-row{grid-template-columns:1fr}}
+.mini-card{border:2px solid var(--ink);padding:1rem;font-family:var(--f-head);line-height:1.55;display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.mini-card b{font-weight:900;font-size:1.05rem}
+.mini-card span{color:var(--ink-soft);font-size:.88rem}
+.mini-card p{font-family:var(--f-body);font-size:.92rem;margin-top:.3rem}
+.mc-tag{font-family:var(--f-display)!important;font-weight:800;letter-spacing:.12em;color:var(--clay)!important;font-size:.8rem!important}
+.sec-h{font-family:var(--f-head);font-weight:900;font-size:var(--step-1);margin:2rem 0 .8rem}
+.tickets{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.tickets{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tickets li{border:2px solid var(--ink);padding:.7rem .4rem;display:flex;flex-direction:column;align-items:center;gap:.3rem;font-family:var(--f-head);text-align:center;background:var(--paper)}
+.tickets svg{width:54px;height:54px}
+.tickets .tn{font-size:.78rem;color:var(--ink-soft)}
+.tickets b{font-size:.95rem}
+.back{margin-top:1.4rem;border:2px dashed var(--ink-soft);padding:.8rem 1rem}
+.back summary{cursor:pointer;font-family:var(--f-head);font-weight:900}
+.back ul{list-style:none;padding:0;margin:.8rem 0 0;display:grid;gap:.9rem}
+.back li b{font-family:var(--f-head);font-weight:900;display:block}
+.back li span{font-family:var(--f-head);font-size:.82rem;color:var(--ink-soft)}
+.back li p{font-size:.93rem}
+.types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.types{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.type{border:2px solid var(--line);padding:.6rem;display:flex;flex-direction:column;gap:.3rem;font-family:var(--f-head);position:relative;background:var(--paper)}
+.type.me{border-color:var(--clay);border-width:3px}.type.mate{border-color:var(--ink)}
+.ty-art{aspect-ratio:4/5;position:relative;overflow:hidden}.ty-art svg{position:absolute;inset:0;width:100%;height:100%}
+.type b{font-weight:900}.type span{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+.type em{position:absolute;top:8px;right:8px;font-style:normal;font-weight:900;font-size:.75rem;background:var(--clay);color:var(--on-accent);padding:.05em .5em}
+.type.mate em{background:var(--ink);color:var(--paper)}
+.care-foot{margin-top:1.4rem}
+.modal{position:fixed;inset:0;z-index:90;background:color-mix(in srgb,var(--ink) 80%,transparent);display:grid;place-items:center;padding:20px max(16px,env(safe-area-inset-left,0px))}
+.modal-in{background:var(--paper);padding:14px;max-width:420px;width:100%;display:grid;gap:10px;max-height:92vh;overflow:auto;font-family:var(--f-head);font-size:.9rem}
+.modal-in img{width:100%;height:auto;border:1px solid var(--line)}
+/* 解密時刻 */
+.debrief{border:2px solid var(--ink);background:var(--paper);max-width:40em;display:grid;gap:12px;padding:1rem 1.1rem;animation:lnIn .6s var(--ease) both}
+.db-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.db-tag{font-family:var(--f-head);font-weight:900;background:var(--ochre);color:var(--ink);padding:.1em .6em;letter-spacing:.1em}
+.db-sub{font-family:var(--f-head);font-weight:900;font-size:var(--step-1)}
+.db-you{font-family:var(--f-head);font-weight:500;font-size:var(--step-0);border-left:5px solid var(--clay);padding-left:.7rem}
+.qz-q{line-height:1.75}.qz-q b{display:inline-block;font-family:var(--f-head);font-weight:900;color:var(--clay);margin-right:.5em}
+.qz-o{display:grid;gap:8px;margin-top:.6rem}
+.qz-b{display:grid;grid-template-columns:36px minmax(0,1fr);align-items:center;text-align:left;border:2px solid var(--ink);background:var(--paper-2);padding:0 .8rem 0 0;font-family:var(--f-head);font-weight:500;line-height:1.5;cursor:pointer;min-height:44px}
+.qz-b span{align-self:stretch;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-weight:900;margin-right:.7rem}
+.qz-b:hover:not([disabled]){background:var(--paper-3)}
+.qz-b[disabled]{cursor:default;opacity:.55}
+.qz-b.right{opacity:1;background:color-mix(in srgb,var(--sage) 40%,var(--paper))}.qz-b.right span{background:var(--sage);color:var(--ink)}
+.qz-b.wrong{opacity:1;background:color-mix(in srgb,var(--rose) 40%,var(--paper))}.qz-b.wrong span{background:var(--clay)}
+.qz-ex{margin-top:.7rem;font-size:.97rem;line-height:1.85;animation:lnIn .5s var(--ease) both}
+.qz-ex b{font-family:var(--f-head);font-weight:900;display:block;margin-bottom:.2rem}
+.clues{display:grid;gap:8px;animation:lnIn .5s var(--ease) both}
+.cl-h{font-family:var(--f-head);font-weight:900;margin-top:.3rem}
+.clue{display:grid;gap:.4rem;text-align:left;border:2px solid var(--ink);background:var(--paper-2);padding:.7rem .9rem;cursor:pointer;font:inherit;color:inherit}
+.cl-q{font-family:var(--f-head);font-weight:900;display:flex;align-items:center;gap:.6rem;line-height:1.45}
+.cl-q i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:var(--slate);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-display)}
+.cl-a{display:none;font-size:.95rem;line-height:1.85}
+.clue.open{background:var(--paper);cursor:default}.clue.open .cl-a{display:block;animation:lnIn .4s var(--ease) both}.clue.open .cl-q i{background:var(--clay)}
+.kpass{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:0;border:2px solid var(--ink);margin-top:1.6rem;align-items:stretch}
+.kpass>div{padding:.8rem 1.1rem;border-right:2px solid var(--ink);font-family:var(--f-head);display:flex;flex-direction:column}
+.kpass span{font-family:var(--f-head);font-weight:900;font-size:.8rem;color:var(--clay)}
+.kpass b{font-family:var(--f-display);font-weight:900;font-size:2.6rem;line-height:1}.kpass small{font-size:1.1rem;color:var(--ink-soft)}
+.kpass em{font-style:normal;font-size:.8rem;color:var(--ink-soft)}
+.kpass p{padding:.8rem 1.1rem;align-self:center;font-family:var(--f-head);font-weight:500}
+@media (max-width:640px){.kpass{grid-template-columns:1fr 1fr}.kpass p{grid-column:1/-1;border-top:2px solid var(--ink)}.kpass>div:nth-child(2){border-right:0}}
+.more{margin-top:.4rem}.more summary{cursor:pointer;font-family:var(--f-head);font-size:.85rem;font-weight:900;color:var(--clay)}
+.more p{margin-top:.5rem;font-size:.92rem;line-height:1.8}.more p b{font-family:var(--f-head)}
+</style>
+<header class="bar">
+  <button class="brand" id="home" aria-label="回到封面"><b>21</b><span>二十一世紀線</span></button>
+  <div class="hud" id="hud" aria-label="車票打洞進度"></div>
+  <button class="sound" id="sound" aria-pressed="false" aria-label="音樂開關"><span class="eq" aria-hidden="true"><span></span><span></span><span></span></span><span class="lbl" id="slbl">音樂</span></button>
+</header>
+<main id="app"></main>
+<script>
+/* ===== 遊戲資料 ===== */
+const ARTIFACT_URL = 'https://claude.ai/artifact/FhmtQAAY4QXuRC9obVXhDp';
+
+const STATIONS = [
+{ id:'superstition', no:'01', name:'不確定站', time:'00:13', color:'--ochre', track:'troll',
+  intro:['列車停在不確定站。','月台上只有一台褪色的求籤機，投幣口貼著手寫字條：','「明天的事，問我。」','你口袋裡剛好有一枚硬幣。明天，是你等了半年的面試。'],
+  choices:[
+    {k:'A', t:'把籤摺好收進皮夾。明天就照它說的做。', s:[1,0,1], tag:'收進皮夾',
+     re:['籤紙在皮夾裡發出很輕的聲音。','你覺得明天，好像穩了一點。']},
+    {k:'B', t:'翻到背面，看見小字「本機每 15 秒隨機出籤」。笑著揉掉。', s:[1,0,-1], tag:'揉掉它',
+     re:['求籤機發出一聲不服氣的「嗶」。','你把紙團投進垃圾桶，三分球。']},
+    {k:'C', t:'把籤遞給長椅上一直看錶的陌生人。', s:[-1,1,0], tag:'送給陌生人',
+     re:['陌生人愣了一下，接過去，看完笑了。','「謝謝。我正需要這個。」']}],
+  stub:{t:'心理學家 Skinner 讓鴿子在固定時間得到食物，不管牠在做什麼。每隻鴿子都發展出自己的「幸運動作」，彷彿那個動作讓食物出現。', b:'Stuart Vyse《Superstition》'}},
+{ id:'anxiety', no:'02', name:'預期站', time:'00:41', color:'--rose', track:'moon',
+  intro:['廣播：「往黎明的列車，延誤，時間未定。」','電子看板上的分鐘數開始亂跳。','然後，你腦中冒出第一個念頭——'],
+  choices:[
+    {k:'A', t:'打開 App，每 30 秒刷新一次即時動態。', s:[1,0,-1], tag:'一直刷新',
+     re:['刷新到第九次的時候，','列車已經安靜地停在你面前了。']},
+    {k:'B', t:'轉頭問旁邊的人：「你也在等這班嗎？」', s:[0,1,0], tag:'跟人說話',
+     re:['「對啊，我也超怕趕不上。」她笑了。','泡泡少了一半。']},
+    {k:'C', t:'不戳了。看著它們自己飄出月台。', s:[-1,0,0], tag:'讓它飄走',
+     re:['泡泡一個接一個飄過鐵軌，','在月台燈下慢慢變淡。']}],
+  stub:{t:'越想用行動壓住焦慮（反覆確認、非要有人陪），越沒機會發現自己其實撐得住。心理學家稱之為「安全行為」。', b:'Daniel & Jason Freeman《Anxiety》'}},
+{ id:'drugs', no:'03', name:'解藥站', time:'01:26', color:'--sage', track:'bwv846',
+  intro:['車廂連結處有一台深夜自動販賣機。','它只賣三種膠囊，標籤寫著：「睡得著」「不緊張」「忘記今天」。','旁邊有一個刻度盤，寫著「劑量」。'],
+  choices:[
+    {k:'A', t:'投幣，按下「忘記今天」。', s:[-1,0,1], tag:'忘記今天',
+     re:['膠囊掉出來。包裝背面印著一行小字：「本品為糖錠。」','可是你真的覺得輕鬆了一點。']},
+    {k:'B', t:'不投幣。按下紅色呼叫鈕：「值班藥師，請回答。」', s:[0,1,-1], tag:'呼叫藥師',
+     re:['對講機沙沙作響。','「先告訴我，你多久沒睡好了？」']},
+    {k:'C', t:'先研究刻度盤，把劑量算到剛剛好。', s:[1,0,0], tag:'算好劑量',
+     re:['你把刻度停在效果一半、副作用還沒開始爬的位置。','販賣機亮起綠燈：「劑量確認。」']}],
+  stub:{t:'安慰劑真的有效：吞兩顆比一顆有效，打針比吞藥更有效。所有新藥都必須先打敗它，才能上市。', b:'Les Iversen《Drugs》'}},
+{ id:'pain', no:'04', name:'身體站', time:'02:08', color:'--clay', track:'dido',
+  intro:['下車時，你的腳趾狠狠踢到車門的鐵條。','站務員跑過來，舉起一張寫著 0 到 10 的卡片。','「幾分痛？」'],
+  choices:[
+    {k:'A', t:'「沒事。忍一下就過了。」', s:[1,-1,0], tag:'忍住',
+     re:['你咬牙走了兩步。','站務員在你背後說：「忍住的痛，也是痛喔。」']},
+    {k:'B', t:'「其實很痛。可以扶我一下嗎？」', s:[0,1,0], tag:'說出來',
+     re:['她扶著你的手肘坐下。','奇怪，說出口以後，好像沒那麼痛了。']},
+    {k:'C', t:'「腳沒那麼痛。是今天整個人太累了。」', s:[0,0,1], tag:'今天太累',
+     re:['站務員點點頭。','「很多痛，都是一點一點累積的。」']}],
+  stub:{t:'痛不是一條從傷口通往大腦的電線。脊髓裡有一道「閘門」，大腦對情境的評估與情緒，決定哪些訊號能通過。', b:'Rob Boddice《Pain》'}},
+{ id:'depression', no:'05', name:'深夜站', time:'03:00', color:'--slate', track:'gymno', care:true,
+  intro:['凌晨三點，車廂燈暗下一半。','手機亮了一下。不是新訊息，是你和阿遠的對話框。','他上一次回覆，是兩個月前。'],
+  choices:[
+    {k:'A', t:'「最近好嗎？週末想約你吃麵。不想聊也沒關係，就吃麵。」', s:[0,1,1], tag:'約他吃麵',
+     reply:['……好。','其實我最近不太好。'], re:['你看著那行字很久。','這是兩個月來，他第一次說出口。']},
+    {k:'B', t:'先不傳。幫他那張灰色天空的照片按個愛心。', s:[-1,-1,-1], tag:'按個愛心',
+     reply:[], sys:'阿遠也對你的動態按了愛心。', re:['沒有對話。','但門縫裡，透進了一點光。']},
+    {k:'C', t:'轉傳一篇〈擺脫低潮的十個科學方法〉。', s:[1,0,-1], tag:'轉傳文章',
+     reply:['謝謝，有空看看。'], re:['已讀。','你突然很想再補一句什麼。']}],
+  stub:{t:'英國一項調查中，92% 的人認為承認有心理健康問題會傷害職涯。憂鬱因此常是「隱形的失能」，最難的往往是說出口。', b:'Mary Jane Tacchi & Jan Scott《Depression》'}},
+{ id:'love', no:'06', name:'連結站', time:'04:47', color:'--plum', track:'canon',
+  intro:['最後一站前，對面座位的人摘下耳機。','你們在交友 App 上配對過。螢幕上寫著：契合度 94%。','你可以先偷看一下對方的檔案。'],
+  choices:[
+    {k:'A', t:'認真列出三個理由：聰明、幽默、溫柔。', s:[1,0,-1], tag:'列出理由',
+     re:['對方聽完，安靜了一下。','「那如果遇到一個比我更幽默的人呢？」你們都笑了。']},
+    {k:'B', t:'「說不出來。就是你。」', s:[0,0,1], tag:'說不出來',
+     re:['對方轉頭看向窗外，','耳朵紅了。']},
+    {k:'C', t:'「我還在認識你。我喜歡現在這樣，一點一點發現。」', s:[-1,1,0], tag:'一點一點發現',
+     re:['「那你剛剛偷看的那幾張，', '算是發現嗎？」']}],
+  stub:{t:'心理學研究發現：把伴侶看得比實際更好一點的情侶，反而更幸福。研究者說，愛不是盲目的，而是預言。', b:'Ronald de Sousa《Love》'}}
+];
+
+const FORTUNES = [
+  {n:'第七籤', g:'上上', t:'風向會轉，你只要在場。'},
+  {n:'第十三籤', g:'下', t:'別在星期五做決定。'},
+  {n:'第二籤', g:'中', t:'舊衣服裡，藏著好運。'},
+  {n:'第九籤', g:'中吉', t:'等的人會來，但不是坐這班車。'},
+  {n:'第四籤', g:'凶', t:'你擔心的事，有一半不會發生。'},
+  {n:'第八籤', g:'大吉', t:'什麼都不用做。'},
+  {n:'第十一籤', g:'小吉', t:'先吃早餐。'},
+  {n:'第三籤', g:'平', t:'答案在你已經知道的地方。'}
+];
+const WORRIES = ['萬一趕不上','萬一明天搞砸','萬一他其實在生氣','萬一手機沒電','萬一這班車根本不會來','萬一大家都看出來了','萬一我不夠好','萬一我忘了關瓦斯','萬一……','萬一來不及說','萬一被討厭','萬一一直這樣'];
+const TRAITS = [{h:'雨天',t:'會故意不帶傘'},{h:'香菜',t:'討厭，但會幫你挑出來'},{h:'電影',t:'一定看到片尾名單最後一行'}];
+const PAIN_Q = ['現在，在這個月台上。','如果這一下，發生在你跑完人生第一場馬拉松的終點線？','如果是半夜一個人在家，明天一早還要上台報告？'];
+
+/* 八種夜行者：G 掌控／放手、O 向外／向內、F 感受／理性 */
+const TYPES = {
+  timetable:{G:1,O:0,F:0, name:'時刻表編纂者', en:'THE TIMETABLER', c:['--slate','--ochre'], track:'bwv846',
+    essence:'只要排得夠仔細，黑夜也有時刻表。',
+    desc:'你面對不確定的方式，是把它拆解、計算，排進表格。你很少慌，因為 B 計畫和 C 計畫早就在你口袋裡。',
+    plus:'冷靜、可靠，危機裡第一個拿出方法的人。', minus:'有些東西沒有時刻表：痛、悲傷、愛。它們不會照你排的班次進站。', line:'偶爾讓一班車誤點，看看會發生什麼。',
+    book:'drugs', why:'你會喜歡書裡的劑量反應曲線。但更該讀安慰劑那一段：有些東西，在表格之外起作用。', match:'stargazer'},
+  nightwatch:{G:1,O:0,F:1, name:'守夜人', en:'THE NIGHT WATCH', c:['--rose','--slate'], track:'moon',
+    essence:'我醒著，大家才能好好睡。',
+    desc:'你感受很深，也習慣一個人扛。你會為了別人的平安失眠，腦中的「萬一」總比別人多幾個。',
+    plus:'細膩、忠誠，總能察覺別人還沒說出口的不安。', minus:'你守著所有人的燈，卻很少讓別人替你守一夜。', line:'擔心不等於保護。今晚，換別人值班。',
+    book:'anxiety', why:'你會在書裡看見自己：一邊相信擔心有用，一邊覺得停不下來。作者說，這正是「為擔心而擔心」的開始。', match:'nocturne'},
+  conductor:{G:1,O:1,F:0, name:'列車長', en:'THE CONDUCTOR', c:['--clay','--ink'], track:'prelude',
+    essence:'全車的人，我都要準時送到。',
+    desc:'你相信方法，也相信人。你喜歡把事情處理好，順手把身邊的人一起帶回軌道。',
+    plus:'行動力強、值得信賴，是一群人裡的錨。', minus:'你很會解決問題。但有時候，對方只是需要被聽見，不需要被解決。', line:'下一次，先問：「你要建議，還是要陪伴？」',
+    book:'anxiety', why:'書裡訪問了足球教練 Graham Taylor，他怎麼帶著一整隊人對付賽前的焦慮。你會很有共鳴。', match:'signal'},
+  charm:{G:1,O:1,F:1, name:'護身符匠', en:'THE CHARM MAKER', c:['--ochre','--clay'], track:'troll',
+    essence:'好運，要大家一起求才靈。',
+    desc:'你用儀式、故事和小小的信仰把人聚在一起。考前的幸運手環、出門前的口訣，你總有一套，也樂意分給別人。',
+    plus:'溫暖、有感染力，能在不安的時刻製造安全感。', minus:'儀式能安定人心，但別讓它取代真正的準備，或真正的求助。', line:'留下讓你安心的儀式，放下讓你害怕的禁忌。',
+    book:'superstition', why:'書裡的實驗發現：讓人表現更好的是「儀式」本身，不是魔法。你會更懂自己手上的護身符。', match:'canon'},
+  stargazer:{G:0,O:0,F:0, name:'觀星的人', en:'THE STARGAZER', c:['--slate','--fog'], track:'gymno',
+    essence:'星星不會因為我擔心，就改變軌道。',
+    desc:'你冷靜地看著世界的隨機，不急著控制，也不急著解釋。別人慌亂的時候，你常是那個說「再看看」的人。',
+    plus:'清醒、從容，不容易被恐慌帶走。', minus:'抽離是一種保護，但有時也讓重要的人覺得你不在場。', line:'看清楚之後，記得伸手。',
+    book:'love', why:'作者是哲學家，把愛寫成一連串謎題：愛有沒有理由？愛是自由還是束縛？對觀察者來說，這是最好的入口。', match:'timetable'},
+  nocturne:{G:0,O:0,F:1, name:'夜曲詩人', en:'THE NOCTURNE', c:['--plum','--rose'], track:'dido',
+    essence:'讓它痛，讓它流過，然後寫下來。',
+    desc:'你不逃避情緒，也不急著修好它。悲傷、思念、說不出的痛，你願意讓它們完整地經過你。',
+    plus:'誠實面對自己，有很少見的感受力。', minus:'在情緒裡待太久，夜會變得比實際更長。', line:'寫完這一首，記得唸給某個人聽。',
+    book:'pain', why:'歷史學家 Boddice 說，痛總是透過「分享」才被經驗。你最擅長感受，這本書會告訴你，說出口也是感受的一部分。', match:'nightwatch'},
+  signal:{G:0,O:1,F:0, name:'信號員', en:'THE SIGNALMAN', c:['--sage','--ink'], track:'morning',
+    essence:'我不開車，但我知道什麼時候該亮紅燈。',
+    desc:'你不執著控制結果，但非常清醒。你知道什麼時候該找專業、什麼時候該拉別人一把，然後放手讓事情運轉。',
+    plus:'判斷準、不黏人，是朋友眼中最好商量的人。', minus:'你很會把人送到對的地方，偶爾也要自己陪完一段路。', line:'亮完燈以後，留下來等列車開過。',
+    book:'depression', why:'書裡說，憂鬱最難的常常是說出口。你很可能就是那個讓人說得出口的人。', match:'conductor'},
+  canon:{G:0,O:1,F:1, name:'同行者', en:'THE CANON', c:['--rose','--plum'], track:'canon',
+    essence:'我們不必同步，只要一直在同一首歌裡。',
+    desc:'你相信連結的力量。你不急著解決問題，而是在旁邊一起走、一起哼。別人說，你是讓人安心的存在。',
+    plus:'包容、溫柔，擅長讓不同的人和平共處。', minus:'一直跟著別人的旋律，有時會忘了自己的聲部。', line:'下一段，換你起頭。',
+    book:'love', why:'哲學家 de Sousa 問：愛是自由，還是束縛？你會在書裡找到屬於自己的那個聲部。', match:'charm'}
+};
+
+const BOOKS = {
+  superstition:{t:'Superstition: A Very Short Introduction', z:'《迷信》', a:'Stuart Vyse', y:'2019'},
+  anxiety:{t:'Anxiety: A Very Short Introduction', z:'《焦慮》', a:'Daniel Freeman & Jason Freeman', y:'2012'},
+  drugs:{t:'Drugs: A Very Short Introduction', z:'《藥物》', a:'Les Iversen', y:'2016'},
+  pain:{t:'Pain: A Very Short Introduction', z:'《疼痛》', a:'Rob Boddice', y:'2017'},
+  depression:{t:'Depression: A Very Short Introduction', z:'《憂鬱》', a:'Mary Jane Tacchi & Jan Scott', y:'2017'},
+  love:{t:'Love: A Very Short Introduction', z:'《愛》', a:'Ronald de Sousa', y:'2015'}
+};
+
+const TRACKS_INFO = {
+  prelude:{t:'巴赫｜G 大調無伴奏大提琴組曲 前奏曲', d:'BWV 1007，約 1720'},
+  troll:{t:'葛利格｜山魔王的大廳', d:'《皮爾金》，1876 首演'},
+  moon:{t:'貝多芬｜月光奏鳴曲 第一樂章', d:'Op.27 No.2，1801'},
+  bwv846:{t:'巴赫｜C 大調前奏曲', d:'平均律第一冊 BWV 846，1722'},
+  dido:{t:'普賽爾｜當我長眠地下', d:'《狄朵與埃涅阿斯》，約 1689'},
+  gymno:{t:'薩提｜吉諾佩第 第一號', d:'1888'},
+  canon:{t:'帕海貝爾｜D 大調卡農', d:'約 1680–1706'},
+  morning:{t:'葛利格｜晨歌', d:'《皮爾金》，1876 首演'}
+};
+
+/* 車票印記：以 100×100 為框的幾何元件，網頁 SVG 與分享圖 Canvas 共用 */
+const TOKENS = {
+  superstition:{c:['--ochre','--slate','--sage'], p:c=>[['circle',50,50,36,c],['circle',50,50,15,'--paper'],['circle',50,50,6,'--ink']]},
+  anxiety:{c:['--rose','--clay','--fog'], p:c=>[['poly','50,10 90,84 10,84',c],['poly','50,40 66,72 34,72','--ink']]},
+  drugs:{c:['--sage','--slate','--ochre'], p:c=>[['rot',-35,[['rrect',14,34,72,32,16,'--paper','--ink',4],['path','M50 34 h20 a16 16 0 0 1 0 32 h-20z',c]]]]},
+  pain:{c:['--clay','--rose','--plum'], p:c=>[['line','M10 64 L30 30 L46 62 L62 26 L78 60 L92 36',c,11],['rect',10,74,82,8,'--ink']]},
+  depression:{c:['--slate','--plum','--fog'], p:c=>[['rect',8,58,84,5,'--ink'],['path','M18 58 a32 32 0 0 1 64 0z',c],['circle',76,24,6,'--ochre']]},
+  love:{c:['--rose','--plum','--clay'], p:c=>[['circle',38,50,27,c],['ring',62,50,27,'--ink',5],['poly','50,12 58,50 50,88 44,50','--ink']]}
+};
+
+/* ===== 解密時刻：把剛才的反應，接回書裡的科學 ===== */
+const doseE = d => 1/(1+Math.exp(-(d-42)/8)), doseS = d => 1/(1+Math.exp(-(d-74)/7));
+const DEBRIEF = {
+superstition:{
+  you:g => g.draws>=2 ? `你抽了 ${g.draws} 支籤，最後留下的是「${g.fortune.t}」。` : `你只抽了一支籤：「${g.fortune.t}」。`,
+  quiz:{q:'1991 年波灣戰爭，飛彈射向以色列。心理學家 Keinan 挨家訪問兩座城市的居民。哪一邊的人用了比較多迷信？',
+    o:['特拉維夫：常被飛彈擊中','耶路撒冷：在飛彈射程之外','兩邊差不多'], a:0,
+    ex:'特拉維夫的居民壓力更大，迷信也更多，例如走進密封避難室要先跨右腳。人類學家 Malinowski 在一次大戰期間也看到同樣的模式：特羅布里恩群島的漁民在平靜的潟湖捕魚只做簡單儀式，出海到危險的外海則有繁複的法術。不確定越大，魔法越多。'},
+  clues:[
+    {q:g=> g.draws>=2 ? '為什麼你會想再抽一支？' : '為什麼一張紙會讓人安心？',
+     a:'Keinan 的另一個實驗：在考試前接受訪談的學生，被問到「你家有人得過肺癌嗎？」這類問題時，比平常更常敲木頭；壓力大、又特別想掌控局面的人敲得最多。研究也發現，越覺得人生由外力擺布的人（外控型），越容易迷信。迷信填補的，是控制感的空缺。'},
+    {q:()=> '幸運物真的有用嗎？',
+     a:'2010 年德國科隆大學的實驗發現，拿到「今天很幸運」的高爾夫球，推桿進洞更多；但 2014 年美國一項規模更大的重複研究沒有得到相同結果。比較可靠的是 2016 年 Alison Wood Brooks 的研究：唱歌或解題前做一段被稱為「儀式」的動作，焦慮會下降、表現變好；同一串動作被說成「隨機動作」就沒效。有用的是儀式，不是魔法。'},
+    {q:()=> '人也會像鴿子一樣嗎？',
+     a:'日本心理學家小野浩一讓大學生坐在有三根拉桿的隔間裡，想辦法讓計分器得分。其實拉桿和分數毫無關係，分數隨機出現。一名學生在得分時剛好把手放在桌上，於是爬上桌摸計分器，接著摸牆、摸燈、跳下地，最後拿著拖鞋一次次跳起來拍天花板，大約 25 分鐘後才因為累了停下。'}]},
+anxiety:{
+  you:g => g.pops===0 ? '你一個「萬一」都沒有碰。' : `你戳破了 ${g.pops} 個「萬一」。${g.pops>=5?'其中有些是你戳出來的：戳破一個，又冒出兩個。':''}`,
+  quiz:{q:'研究者念出發音相同的英文字，請人寫下來，例如 die／dye（死亡／染色）、pain／pane（疼痛／窗格）。越焦慮的人會怎麼寫？',
+    o:['更常寫出帶威脅意味的那個字','更常寫出中性的那個字','沒有差別'], a:0,
+    ex:'焦慮的人傾向把模稜兩可的事解讀成危險。日常生活充滿曖昧的訊號，例如別人的表情、晚回的訊息，這種偏誤會一點一滴餵養焦慮。CBT 創始人 Beck 也發現，焦慮的人常帶著「最好做最壞打算」「我必須掌控一切」這類根深柢固的信念。'},
+  clues:[
+    {q:g=> g.pops>=5 ? '為什麼越戳越多？' : '為什麼我們很難停止擔心？',
+     a:'心理學家 Adrian Wells 的「後設認知模型」：很多人相信擔心有用，能預防災難、讓人有所準備，同時又覺得擔心停不下來，於是開始「為擔心而擔心」。書中把憂慮定義為一連串負面、難以控制的「萬一」思考。一項研究中，38% 的人每天至少憂慮一次。'},
+    {q:()=> '一直確認、非要有人陪，有什麼不好？',
+     a:'這叫「安全行為」：短期內降低焦慮，卻讓人沒機會發現自己其實撐得住。心理學家 Mowrer 的兩階段理論也說明，因為怕而不搭飛機的人，就永遠無法發現恐懼被誇大了。逐步面對害怕的情境（系統減敏感法），至今仍是治療恐懼症的標準方法。'},
+    {q:()=> '為什麼身體會比腦袋先慌？',
+     a:'焦慮是演化留下的警報。交感神經讓心跳加速，流向肌肉的血液在某些情況下可增加多達 1200%。神經科學家 LeDoux 指出，杏仁核提供一條又快又粗糙的「低路」，先救命再說；經過額葉的「高路」比較慢，但比較準。焦慮症可能就是警報太靈敏，額葉又來不及踩煞車。'}]},
+drugs:{
+  you:g => `你把劑量轉到 ${g.dose}：效果約 ${Math.round(doseE(g.dose)*100)}%，副作用約 ${Math.round(doseS(g.dose)*100)}%。`,
+  quiz:{q:'臨床試驗發現，下面哪一種「假治療」的安慰劑效果最強？',
+    o:['吞一顆糖錠','吞好幾顆糖錠','假的手術'], a:2,
+    ex:'書中寫道：吞好幾顆比吞一顆有效，靜脈注射比吞藥有效，假手術效果更強。安慰劑效應在憂鬱、疼痛這類中樞神經系統的疾病特別明顯，所以每一種新藥都得先打敗它，才能上市。'},
+  clues:[
+    {q:()=> '刻度盤上那兩條曲線是什麼？',
+     a:'藥理學家用「劑量反應曲線」描述劑量增加時效果的變化，產生一半最大反應的劑量叫 ED50。同一顆藥對不同人效果也不同：約 6% 的白人缺少 CYP2D6 這種肝臟代謝酶，而它參與約四分之一處方藥的代謝。'},
+    {q:()=> '「天然的」就比較安全嗎？',
+     a:'嗎啡來自罌粟，古柯鹼來自古柯葉。1803 年化學家從鴉片中分離出嗎啡；二十世紀初，含古柯鹼的「古柯酒」被當成補品販售，1920 年代的香菸廣告還在宣傳健康。書中也指出，草藥上市不必證明療效，相對地也不能宣稱特定療效。'},
+    {q:()=> '為什麼有些東西會讓人想再來一次？',
+     a:'海洛因、安非他命、尼古丁、古柯鹼、大麻在腦中的作用點各不相同，卻都能促進某些腦區釋放多巴胺，這可能是驅使人再次使用的訊號。但成癮需要長期反覆使用，涉及大腦裡基因開關的改變。作者也批評，社會仍傾向把成癮者當罪犯懲罰，而不是需要治療的人。'}]},
+pain:{
+  you:g => { const r = Math.max(...g.pain)-Math.min(...g.pain); return `同一根腳趾，你打了 ${g.pain.join('、')} 分。${r>=3?`最多差了 ${r} 分。`:'分數幾乎沒變。'}`; },
+  quiz:{q:'麻醉學家 Beecher 注意到一件怪事：受了重傷的士兵，常常怎麼描述自己的痛？',
+    o:['痛到無法忍受','沒有想像中痛，甚至說不太痛','完全失去知覺'], a:1,
+    ex:'很多重傷者在當下說不太痛，因為注意力在別處：怎麼脫險、能不能活下來。疼痛學者 Patrick Wall 也記錄過車禍傷者，直到事後才感覺到斷肢的痛。Boddice 寫道：我們只會感覺到我們注意的痛。等比賽結束、戰鬥停止、離開事故現場，痛才會湧上來。'},
+  clues:[
+    {q:()=> '為什麼同一個傷，分數會不一樣？',
+     a:'1965 年 Melzack 與 Wall 提出「閘門控制理論」：脊髓裡有一道閘門，大腦對情境的評估與當下的情緒，會決定哪些訊號能通過。所以「揉一揉就不痛」是真的；安心、經驗和知識能減輕疼痛，不確定和恐懼則讓它更尖銳。'},
+    {q:()=> '如果完全不會痛，不是很好嗎？',
+     a:'有一種罕見的遺傳狀況，患者能感覺到壓迫和切割，卻完全不在乎。腦造影顯示他們的「痛覺區」有反應，但情感區沒有。他們腿受傷不會跛行，斷了手臂照樣投球，骨骼和關節因此加速磨損。疼痛的意義來自情緒，而正是這份意義讓我們活下來。'},
+    {q:()=> '心碎，也算是痛嗎？',
+     a:'心理學家 Naomi Eisenberger 從 2003 年起，讓受試者在腦部掃描儀裡玩傳球遊戲。玩到一半，另外兩人不再傳球給他。被排擠時的腦部活動和身體疼痛相似。2015 年俄亥俄州立大學的研究甚至發現，止痛藥成分乙醯胺酚會讓人對正面與負面的情緒刺激都變得遲鈍。'}]},
+depression:{
+  you:g => ({A:'你選擇開口邀請，而且留了一條不用說話的退路。', B:'你選擇了一個不打擾的方式。', C:'你選擇給他方法。'})[g.ch.depression],
+  quiz:{q:'世界衛生組織估計，經歷憂鬱的人當中，大約有多少人能得到有效的治療？',
+    o:['約四分之三','約一半','約四分之一'], a:2,
+    ex:'只有約 25%。WHO 估計每年有超過 5% 的人口處於憂鬱，一生中約 15% 的人會經歷；一次發作平均四到八個月，約一半的人五年內會再發作。在 19–45 歲的成年人中，憂鬱是全球疾病負擔的第一名。'},
+  clues:[
+    {q:()=> '為什麼他什麼都不說？',
+     a:'2009 年英國 Time to Change 調查：92% 的民眾認為承認有心理健康問題會傷害職涯。澳洲學者 Anthony Jorm 等人一再發現，覺得難堪、預期被負面看待，是憂鬱者不敢求助的主要障礙。2010 年一項中國研究也發現，多數憂鬱的基層就診者只談身體症狀。'},
+    {q:()=> '為什麼「想開一點」沒有用？',
+     a:'作者特別反對把憂鬱稱為「心理學界的普通感冒」，認為這種比喻危險地天真。Beck 的認知模型說明，憂鬱中對自己、世界與未來的負面看法會互相強化；反覆追問「為什麼是我」的反芻，又會放大低落。它不是一念之間就能翻轉的事。'},
+    {q:()=> '憂鬱是現代人才有的病嗎？',
+     a:'西元前四世紀，希波克拉底就用「黑膽汁過多」解釋 melancholia：沮喪、厭食、失眠、易怒。英文 depression 來自拉丁文 deprimere，「往下壓」。文藝復興時期的「土星派」甚至認為憂鬱是天才的標記；1621 年，Robert Burton 寫成了《憂鬱的解剖》。'}]},
+love:{
+  you:g => `你偷看了 ${g.flips} 張小祕密，然後選擇了「${STATIONS[5].choices.find(c=>c.k===g.ch.love).tag}」。`,
+  quiz:{q:'人類學家 Helen Fisher 把愛分成三套系統。其中茶不思飯不想的「迷戀」階段，通常最長維持多久？',
+    o:['幾個星期','三到四年','一輩子'], a:1,
+    ex:'Fisher 認為迷戀由多巴胺與正腎上腺素驅動，以週或月計，最長約三到四年；de Sousa 說，伴侶關係最容易在第三、四年破裂，並不是巧合。另外兩套是情慾（性荷爾蒙）與依附（催產素與血管加壓素），依附可以延續數十年。'},
+  clues:[
+    {q:()=> '認真列出理由，有什麼問題？',
+     a:'de Sousa 的謎題：如果那些真的是「理由」，它就該對任何人都成立。那麼遇到更聰明、更幽默的人呢？對方老了、變了呢？而且被愛的人未必想因為那些理由被愛。羅密歐說茱麗葉是太陽，茱麗葉也許會想：我用心彈魯特琴的時候，你根本沒在聽。'},
+    {q:()=> '把對方想得比較好，算是自欺嗎？',
+     a:'書中提到「結晶化」：愛會替對方鍍上一層閃亮的特質。心理學家 Sandra Murray 等人 1996 年的研究發現，越理想化對方的伴侶，關係越滿意、衝突越少，被理想化的一方也會漸漸用更正面的眼光看自己。論文副標是：「愛不是盲目的，而是預言。」'},
+    {q:()=> '如果有愛情藥，你會吃嗎？',
+     a:'牛津哲學家 Brian Earp 提出：若有能增強愛的藥物，為了遵守「至死不渝」的誓言，伴侶甚至可能有義務服用。de Sousa 則主張社會應更包容多元的愛的形式，並批判他所謂的「單一伴侶主義」。這個立場有爭議，許多人認為一對一的承諾本身就有深刻的價值。'}]}
+};
+
+/* ===== 站點色塊構圖 ===== */
+const ART = {
+cover:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <circle class="spin" cx="250" cy="185" r="128" fill="var(--ochre)"/>
+  <circle cx="250" cy="185" r="128" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="2 10"/>
+  <polygon class="drift" points="-20,330 300,150 316,182" fill="var(--clay)"/>
+  <rect x="-40" y="352" width="520" height="30" fill="var(--ink)" transform="rotate(-18 200 367)"/>
+  <rect x="40" y="60" width="96" height="96" fill="var(--slate)"/>
+  <rect x="64" y="84" width="48" height="48" fill="var(--paper-2)"/>
+  <path d="M60 470 a70 70 0 0 1 140 0z" fill="var(--sage)"/>
+  <circle class="breathe" cx="320" cy="420" r="34" fill="var(--rose)"/>
+  <circle cx="340" cy="420" r="34" fill="none" stroke="var(--plum)" stroke-width="6"/>
+  ${[0,1,2,3,4,5].map(i=>`<circle cx="${62+i*56}" cy="${300-i*20}" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="4"/>`).join('')}
+  <text x="372" y="40" text-anchor="end" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="40" fill="var(--ink)">LINE 21</text>`,
+superstition:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <circle class="spin" cx="236" cy="200" r="130" fill="var(--ochre)"/>
+  <circle cx="236" cy="200" r="94" fill="none" stroke="var(--paper-2)" stroke-width="3" stroke-dasharray="3 9"/>
+  <rect x="-60" y="300" width="560" height="34" fill="var(--ink)" transform="rotate(-24 200 317)"/>
+  <g class="drift"><circle cx="96" cy="390" r="62" fill="var(--slate)"/><circle cx="96" cy="390" r="40" fill="var(--paper)"/><circle cx="96" cy="390" r="24" fill="var(--slate)"/><circle class="blink" cx="96" cy="390" r="10" fill="var(--ink)"/></g>
+  ${Array.from({length:16},(_,i)=>i===12?'':`<rect x="${226+(i%4)*36}" y="${356+Math.floor(i/4)*30}" width="26" height="20" fill="${i===11?'var(--clay)':'var(--fog)'}"/>`).join('')}
+  <text x="226" y="350" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="var(--ink-soft)">NO.13 MISSING</text>`,
+anxiety:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <rect x="0" y="110" width="400" height="26" fill="var(--ink)"/>
+  <rect x="0" y="268" width="400" height="26" fill="var(--ink)"/>
+  <ellipse class="breathe" cx="160" cy="202" rx="120" ry="66" fill="var(--slate)"/>
+  <polygon class="drift" points="250,140 380,202 250,264" fill="var(--rose)"/>
+  <polygon points="290,170 350,202 290,234" fill="var(--clay)"/>
+  ${[0,1,2,3,4].map(i=>`<rect x="${40+i*58}" y="${470-(i+1)*30}" width="58" height="${(i+1)*30}" fill="${i===4?'var(--clay)':'var(--fog)'}" opacity="${.45+i*.12}"/>`).join('')}
+  <text x="40" y="70" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="30" fill="var(--ink)">WHAT IF · WHAT IF · WHAT IF</text>`,
+drugs:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <circle cx="270" cy="150" r="92" fill="none" stroke="var(--ochre)" stroke-width="34"/>
+  <rect x="140" y="138" width="130" height="24" fill="var(--ink)"/><rect x="160" y="162" width="16" height="22" fill="var(--ink)"/><rect x="190" y="162" width="16" height="30" fill="var(--ink)"/>
+  <g class="drift" transform="rotate(-32 120 330)"><rect x="40" y="300" width="170" height="64" rx="32" fill="var(--paper)" stroke="var(--ink)" stroke-width="5"/><path d="M125 300 h53 a32 32 0 0 1 0 64 h-53z" fill="var(--sage)"/></g>
+  <g class="drift2" transform="rotate(20 300 380)"><rect x="250" y="360" width="110" height="40" rx="20" fill="var(--slate)"/></g>
+  <path d="M30 470 C150 470 190 290 370 280" fill="none" stroke="var(--ink)" stroke-width="6"/>
+  <line x1="200" y1="376" x2="200" y2="476" stroke="var(--clay)" stroke-width="4" stroke-dasharray="6 6"/>
+  <text x="208" y="470" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="16" fill="var(--clay)">ED50</text>`,
+pain:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <rect x="80" y="40" width="70" height="300" fill="var(--ink)"/>
+  <rect x="190" y="40" width="70" height="300" fill="var(--ink)"/>
+  ${[0,1,2,3].map(i=>`<circle class="blink" style="animation-delay:${-i*.8}s" cx="170" cy="${80+i*66}" r="11" fill="var(--rose)"/>`).join('')}
+  <polyline class="drift" points="-10,420 70,330 130,410 200,300 270,400 330,310 420,390" fill="none" stroke="var(--clay)" stroke-width="26" stroke-linejoin="miter"/>
+  <rect x="292" y="70" width="58" height="58" fill="var(--fog)"/><rect x="300" y="138" width="52" height="40" fill="var(--fog)" transform="rotate(8 326 158)"/><rect x="286" y="186" width="40" height="40" fill="var(--plum)" transform="rotate(-12 306 206)"/>
+  <text x="20" y="485" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="14" letter-spacing="3" fill="var(--ink-soft)">GATE CONTROL · MELZACK &amp; WALL 1965</text>`,
+depression:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <rect class="drift2" x="50" y="34" width="300" height="96" fill="var(--plum)"/>
+  <rect x="50" y="130" width="300" height="10" fill="var(--ink)"/>
+  <clipPath id="hz"><rect x="0" y="0" width="400" height="330"/></clipPath>
+  <circle clip-path="url(#hz)" cx="200" cy="330" r="130" fill="var(--slate)"/>
+  <rect x="0" y="330" width="400" height="6" fill="var(--ink)"/>
+  ${[0,1,2,3,4].map(i=>`<rect x="${110+i*8}" y="${350+i*22}" width="${180-i*16}" height="6" fill="var(--slate)" opacity="${.7-i*.12}"/>`).join('')}
+  <circle class="blink" cx="70" cy="440" r="10" fill="var(--ochre)"/>
+  <text x="90" y="446" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="14" letter-spacing="3" fill="var(--ink-soft)">DE·PRIMERE</text>`,
+love:()=>`
+  <rect width="400" height="500" fill="var(--paper-2)"/>
+  <circle class="drift" cx="160" cy="230" r="112" fill="var(--rose)"/>
+  <circle class="drift2" cx="250" cy="230" r="112" fill="none" stroke="var(--plum)" stroke-width="22"/>
+  <polygon points="-20,90 236,226 -20,250" fill="var(--clay)"/>
+  <rect x="-40" y="400" width="520" height="16" fill="var(--ink)" transform="rotate(-8 200 408)"/>
+  <circle cx="320" cy="430" r="16" fill="var(--ochre)"/><circle cx="352" cy="430" r="16" fill="none" stroke="var(--ink)" stroke-width="4"/>
+  <text x="380" y="60" text-anchor="end" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="26" fill="var(--ink)">PHILIA · STORGE · AGAPE · EROS</text>`
+};
+const svg = (inner, cls='art') => `<svg class="${cls}" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${inner}</svg>`;
+
+/* ===== 古典音樂：Web Audio 即時合成（公有領域樂曲之改編片段） ===== */
+const Music = (() => {
+  let ctx = null, bus, master, waves = {}, cur = null, timer = null, on = true, unlocked = false;
+  const NOTE = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
+  const m = s => { const r = /^([A-G])(#|b)?(-?\d)$/.exec(s); let v = NOTE[r[1]] + (r[2]==='#'?1:r[2]==='b'?-1:0); return v + (parseInt(r[3])+1)*12; };
+  const hz = n => 440 * Math.pow(2, (n - 69) / 12);
+
+  function wave(h){ const re = new Float32Array(h.length), im = new Float32Array(h.length); h.forEach((v,i)=>{ im[i]=v; }); return ctx.createPeriodicWave(re, im); }
+  function impulse(sec, decay){
+    const rate = ctx.sampleRate, len = Math.floor(rate*sec), b = ctx.createBuffer(2, len, rate);
+    for (let c=0;c<2;c++){ const d=b.getChannelData(c); let y=0; for(let i=0;i<len;i++){ const x=(Math.random()*2-1)*Math.pow(1-i/len,decay); y = y*0.55 + x*0.45; d[i]=y; } }
+    return b;
+  }
+  function init(){
+    if (ctx) return true;
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+    ctx = new AC();
+    const comp = ctx.createDynamicsCompressor(); comp.threshold.value=-20; comp.knee.value=12; comp.ratio.value=3; comp.attack.value=.01; comp.release.value=.3;
+    master = ctx.createGain(); master.gain.value = 0; master.connect(comp); comp.connect(ctx.destination);
+    bus = ctx.createGain();
+    const dry = ctx.createGain(); dry.gain.value=.8;
+    const conv = ctx.createConvolver(); conv.buffer = impulse(3.4, 2.4);
+    const wet = ctx.createGain(); wet.gain.value=.34;
+    const pre = ctx.createBiquadFilter(); pre.type='highpass'; pre.frequency.value=180;
+    bus.connect(dry); dry.connect(master); bus.connect(pre); pre.connect(conv); conv.connect(wet); wet.connect(master);
+    waves.piano = wave([0,1,.55,.32,.2,.12,.07,.045,.025,.015]);
+    waves.pluck = wave([0,1,.25,.12,.06,.03]);
+    waves.flute = wave([0,1,.14,.06,.02]);
+    waves.oboe  = wave([0,.55,1,.8,.55,.38,.22,.12,.06]);
+    return true;
+  }
+  function panner(dest, n){
+    if (!ctx.createStereoPanner) return dest;
+    const p = ctx.createStereoPanner(); p.pan.value = Math.max(-.45, Math.min(.45, (n-62)/36)); p.connect(dest); return p;
+  }
+  /* ---- 音色 ---- */
+  const V = {
+    piano(dest,t,n,dur,vel){
+      const f=hz(n), out=panner(dest,n), g=ctx.createGain(), lp=ctx.createBiquadFilter();
+      lp.type='lowpass'; lp.Q.value=.4;
+      const b0=Math.min(9000, f*7 + 1800*vel); lp.frequency.setValueAtTime(b0,t); lp.frequency.setTargetAtTime(Math.max(f*2.2,500), t+.02, .9);
+      const pk=.2*vel, T=Math.max(.45, Math.min(3.6, 1.6*Math.pow(262/f,.5))), end=t+dur;
+      g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(pk,t+.006);
+      if (dur > .32){ g.gain.setTargetAtTime(pk*.42,t+.006,.16); g.gain.setTargetAtTime(0,t+.3,T); g.gain.setTargetAtTime(0,end,.14); }
+      else { g.gain.setTargetAtTime(pk*.42,t+.006,.16); g.gain.setTargetAtTime(0,end,.18); }
+      const o1=ctx.createOscillator(), o2=ctx.createOscillator(), g2=ctx.createGain();
+      o1.setPeriodicWave(waves.piano); o2.setPeriodicWave(waves.piano); o1.frequency.value=f; o2.frequency.value=f; o2.detune.value=4; g2.gain.value=.45;
+      o1.connect(g); o2.connect(g2); g2.connect(g); g.connect(lp); lp.connect(out);
+      const stop=end+1.4; o1.start(t); o2.start(t); o1.stop(stop); o2.stop(stop);
+    },
+    pluck(dest,t,n,dur,vel){
+      const f=hz(n), out=panner(dest,n), g=ctx.createGain(), lp=ctx.createBiquadFilter(), o=ctx.createOscillator();
+      lp.type='lowpass'; lp.frequency.setValueAtTime(Math.min(6000,f*5),t); lp.frequency.setTargetAtTime(f*1.6,t,.08);
+      o.setPeriodicWave(waves.pluck); o.frequency.value=f;
+      g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.26*vel,t+.004); g.gain.setTargetAtTime(0,t+.004,.16+ (n<48?.1:0));
+      o.connect(g); g.connect(lp); lp.connect(out); o.start(t); o.stop(t+1.3);
+    },
+    strings(dest,t,n,dur,vel){
+      const f=hz(n), out=panner(dest,n), g=ctx.createGain(), lp=ctx.createBiquadFilter(), end=t+dur;
+      lp.type='lowpass'; lp.Q.value=.6; lp.frequency.value=Math.min(2400, f*3.2+300);
+      const lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.frequency.value=5.1; lg.gain.setValueAtTime(0,t); lg.gain.linearRampToValueAtTime(f*.0045,t+.6); lfo.connect(lg);
+      const os=[-7,6].map(d=>{ const o=ctx.createOscillator(); o.type='sawtooth'; o.frequency.value=f; o.detune.value=d; lg.connect(o.frequency); o.connect(g); return o; });
+      g.gain.setValueAtTime(0,t); g.gain.setTargetAtTime(.07*vel,t,.18); g.gain.setTargetAtTime(0,end,.4);
+      g.connect(lp); lp.connect(out);
+      const stop=end+2.2; os.forEach(o=>{o.start(t);o.stop(stop)}); lfo.start(t); lfo.stop(stop);
+    },
+    flute(dest,t,n,dur,vel,kind){
+      const f=hz(n), out=panner(dest,n), g=ctx.createGain(), lp=ctx.createBiquadFilter(), end=t+dur, o=ctx.createOscillator();
+      o.setPeriodicWave(kind==='oboe'?waves.oboe:waves.flute); o.frequency.value=f;
+      lp.type='lowpass'; lp.frequency.value= kind==='oboe'?3200:5200;
+      const lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.frequency.value=5.3; lg.gain.setValueAtTime(0,t); lg.gain.linearRampToValueAtTime(f*.006,t+.45); lfo.connect(lg); lg.connect(o.frequency);
+      const pk=(kind==='oboe'?.085:.13)*vel;
+      g.gain.setValueAtTime(0,t); g.gain.setTargetAtTime(pk,t,.035); g.gain.setTargetAtTime(pk*.82,t+.15,.3); g.gain.setTargetAtTime(0,end-.02,.07);
+      o.connect(g); g.connect(lp); lp.connect(out); const stop=end+.8; o.start(t); o.stop(stop); lfo.start(t); lfo.stop(stop);
+    }
+  };
+
+  /* ---- 樂曲（拍為單位：[起拍, 音, 長度, 力度, 音色]） ---- */
+  const E = (arr, b, notes, dur, vel, v, step) => { notes.forEach((nn,i)=>{ if(nn) arr.push([b+(step?i*step:0), m(nn), dur, vel, v]); }); };
+  const T = {};
+
+  // 巴赫 BWV 1007 前奏曲（前八小節，移高八度以鋼琴演奏）
+  T.prelude = (()=>{ const ev=[], bars=[
+    ['G2 D3 B3 A3 B3 D3 B3 D3','G2 D3 B3 A3 B3 D3 B3 D3'],
+    ['G2 E3 C4 B3 C4 E3 C4 E3','G2 E3 C4 B3 C4 E3 C4 E3'],
+    ['G2 F#3 C4 B3 C4 F#3 C4 F#3','G2 F#3 C4 B3 C4 F#3 C4 F#3'],
+    ['G2 G3 B3 A3 B3 G3 B3 G3','G2 G3 B3 A3 B3 G3 B3 F#3'],
+    ['G2 E3 B3 A3 B3 G3 F#3 G3','E3 G3 F#3 G3 B2 D3 C#3 B2'],
+    ['C#3 G3 A3 G3 A3 G3 A3 G3','C#3 G3 A3 G3 A3 G3 A3 G3'],
+    ['F#3 A3 D4 C#4 D4 A3 G3 A3','F#3 A3 G3 A3 D3 F#3 E3 D3'],
+    ['E2 B2 G3 F#3 G3 B2 G3 B2','E2 B2 G3 F#3 G3 B2 G3 B2']];
+    bars.forEach((bar,bi)=>bar.forEach((h,hi)=>h.split(' ').forEach((nn,i)=>{
+      const b=bi*4+hi*2+i*.25, n=m(nn)+12; ev.push([b,n,i===0?1.6:.42,i===0?.62:.42+(i%2?.04:0),'piano']); })));
+    return {bpm:58, len:32, ev, gain:1};
+  })();
+
+  // 葛利格〈山魔王的大廳〉主題
+  T.troll = (()=>{ const ev=[]; const ph=[
+    ['B3',.5],['C#4',.5],['D4',.5],['E4',.5],['F#4',.5],['D4',.5],['F#4',1],
+    ['F4',.5],['C#4',.5],['F4',1],['E4',.5],['C4',.5],['E4',1],
+    ['B3',.5],['C#4',.5],['D4',.5],['E4',.5],['F#4',.5],['D4',.5],['F#4',.5],['B4',.5],
+    ['A4',.5],['F#4',.5],['D4',.5],['F#4',.5],['A4',2]];
+    for (let rep=0; rep<2; rep++){ let b=rep*16; const sh=rep?12:0;
+      ph.forEach(([nn,d])=>{ ev.push([b,m(nn)+sh,d*.9,rep?.55:.7,'pluck']); if(rep) ev.push([b,m(nn),d*.9,.4,'pluck']); b+=d; });
+      for (let q=0;q<16;q++){ const bass = (q%4<2)?'B1':'F#2'; ev.push([rep*16+q, m(bass)+ (q%2?12:0), .5, .5,'pluck']); }
+    }
+    return {bpm:104, len:32, ev, gain:.85};
+  })();
+
+  // 貝多芬《月光》第一樂章（開頭八小節，三連音以 1/3 拍計）
+  T.moon = (()=>{ const ev=[], tr=1/3;
+    const bars=[
+      {bass:['C#2','C#3'],bl:4, tri:[['G#3','C#4','E4'],4]},
+      {bass:['B1','B2'],bl:4, tri:[['G#3','C#4','E4'],4]},
+      {bass:['A1','A2'],bl:2, tri:[['A3','C#4','E4'],2], bass2:['F#1','F#2'], tri2:[['A3','D4','F#4'],2]},
+      {bass:['G#1','G#2'],bl:4, seq:[['G#3','B#3','F#4'],['G#3','C#4','E4'],['G#3','C#4','D#4'],['F#3','B#3','D#4']]},
+      {bass:['C#2','C#3'],bl:4, tri:[['G#3','C#4','E4'],4], mel:[[3,'G#4',.75],[3.75,'G#4',.25]]},
+      {bass:['B1','B2'],bl:4, tri:[['G#3','C#4','E4'],4], mel:[[0,'G#4',3],[3,'G#4',.75],[3.75,'G#4',.25]]},
+      {bass:['A1','A2'],bl:2, tri:[['A3','C#4','E4'],2], bass2:['F#1','F#2'], tri2:[['A3','D4','F#4'],2], mel:[[0,'A4',2],[2,'A4',2]]},
+      {bass:['G#1','G#2'],bl:4, seq:[['G#3','B#3','F#4'],['G#3','C#4','E4'],['G#3','C#4','D#4'],['F#3','B#3','D#4']], mel:[[0,'G#4',2],[2,'F#4',1],[3,'G#4',1]]}];
+    const fix = s => s.replace('B#3','C4');
+    bars.forEach((bar,bi)=>{ const b0=bi*4;
+      bar.bass.forEach(nn=>ev.push([b0,m(nn),bar.bl,.5,'piano']));
+      if (bar.bass2) bar.bass2.forEach(nn=>ev.push([b0+2,m(nn),2,.48,'piano']));
+      const put=(cells,start)=>cells.forEach((c,ci)=>c.forEach((nn,k)=>ev.push([start+ci+k*tr, m(fix(nn)), .5, .3+(k===0?.04:0),'piano'])));
+      if (bar.tri){ const [c,cnt]=bar.tri; put(Array(cnt).fill(c), b0); }
+      if (bar.tri2){ const [c,cnt]=bar.tri2; put(Array(cnt).fill(c), b0+2); }
+      if (bar.seq) put(bar.seq, b0);
+      if (bar.mel) bar.mel.forEach(([o,nn,d])=>ev.push([b0+o,m(nn),d,.62,'piano']));
+    });
+    return {bpm:54, len:32, ev, gain:1};
+  })();
+
+  // 巴赫 BWV 846 C 大調前奏曲（前三十二小節＋終止和弦，以十六分音符為拍）
+  T.bwv846 = (()=>{ const ev=[]; const bars=`C4 E4 G4 C5 E5|C4 D4 A4 D5 F5|B3 D4 G4 D5 F5|C4 E4 G4 C5 E5|C4 E4 A4 E5 A5|C4 D4 F#4 A4 D5|B3 D4 G4 D5 G5|B3 C4 E4 G4 C5|A3 C4 E4 G4 C5|D3 A3 D4 F#4 C5|G3 B3 D4 G4 B4|G3 Bb3 E4 G4 C#5|F3 A3 D4 A4 D5|F3 Ab3 D4 F4 B4|E3 G3 C4 G4 C5|E3 F3 A3 C4 F4|D3 F3 A3 C4 F4|G2 D3 G3 B3 F4|C3 E3 G3 C4 E4|C3 G3 Bb3 C4 E4|F2 F3 A3 C4 E4|F#2 C3 A3 C4 Eb4|Ab2 F3 B3 C4 D4|G2 F3 G3 B3 D4|G2 E3 G3 C4 E4|G2 D3 G3 C4 F4|G2 D3 G3 B3 F4|G2 Eb3 A3 C4 F#4|G2 E3 G3 C4 G4|G2 D3 G3 C4 F4|G2 D3 G3 B3 F4|C2 C3 G3 Bb3 E4`.split('|');
+    bars.forEach((bar,bi)=>{ const n=bar.split(' '); for(let h=0;h<2;h++){ const t0=bi*16+h*8;
+      ev.push([t0,m(n[0]),8,.5,'piano']); ev.push([t0+1,m(n[1]),7,.4,'piano']);
+      [2,3,4,2,3,4].forEach((k,i)=>ev.push([t0+2+i,m(n[k]),1.5,.38+(i===0||i===3?.05:0),'piano'])); } });
+    const end=bars.length*16; ['C2','C3','E3','G3','C4','E4'].forEach((nn,i)=>ev.push([end+i*.5,m(nn),14-i*.5,.45,'piano']));
+    return {bpm:4*64, len:end+16, ev, gain:1};
+  })();
+
+  // 普賽爾〈當我長眠地下〉：半音下行頑固低音（3/2 拍，以二分音符為拍）
+  T.dido = (()=>{ const ev=[];
+    const ground=[['G2',2],['F#2',1],['F2',2],['E2',1],['Eb2',2],['D2',1],['Bb1',1],['C2',1],['D2',1],['G1',3]];
+    const chords=[['Bb3','D4','G4'],['A3','D4','F#4'],['A3','D4','F4'],['G3','C4','E4'],['G3','C4','Eb4'],['A3','D4','F#4'],['Bb3','D4','G4'],['G3','C4','Eb4'],['A3','D4','F#4'],['Bb3','D4','G4']];
+    const mel=[
+      [['Bb4',2],['A4',1],['A4',1],['D5',1],['C5',1],['C5',1],['G4',1],['F#4',1],['G4',1],['G4',1],['F#4',1],['G4',3]],
+      [['D5',1],['D5',1],['D5',1],['D5',2],['C5',1],['C5',1],['Bb4',1],['A4',1],['Bb4',1],['G4',1],['F#4',1],['G4',3]]];
+    for (let c=0;c<2;c++){ let b=c*15;
+      ground.forEach(([nn,d],i)=>{ ev.push([b,m(nn),d,.75,'strings']); ev.push([b,m(nn)-12,d,.4,'strings']); chords[i].forEach(cn=>ev.push([b,m(cn),d,.42,'strings'])); b+=d; });
+      b=c*15; mel[c].forEach(([nn,d])=>{ ev.push([b,m(nn),d*.96,.62,'flute']); b+=d; });
+    }
+    return {bpm:44, len:30, ev, gain:1.1};
+  })();
+
+  // 薩提《吉諾佩第》第一號（3/4 拍）
+  T.gymno = (()=>{ const ev=[], bars=20;
+    for (let i=0;i<bars;i++){ const b=i*3, g=i%2===0;
+      ev.push([b, m(g?'G2':'D2'), 3, .48,'piano']);
+      (g?['B3','D4','F#4']:['A3','C#4','F#4']).forEach(nn=>ev.push([b+1,m(nn),2,.32,'piano'])); }
+    const mel=[[13,'F#5',1],[14,'A5',1],[15,'G5',1],[16,'F#5',1],[17,'C#5',1],[18,'B4',1],[19,'C#5',1],[20,'D5',1],[21,'A4',3],[24,'F#4',12],
+               [37,'F#5',1],[38,'A5',1],[39,'G5',1],[40,'F#5',1],[41,'C#5',1],[42,'B4',1],[43,'C#5',1],[44,'D5',1],[45,'A4',3],[48,'C#5',3],[51,'F#5',3],[54,'E5',6]];
+    mel.forEach(([b,nn,d])=>ev.push([b,m(nn),d,.5,'piano']));
+    return {bpm:66, len:bars*3, ev, gain:1.2};
+  })();
+
+  // 帕海貝爾《D 大調卡農》
+  T.canon = (()=>{ const ev=[];
+    const bass=['D2','A1','B1','F#2','G1','D2','G1','A1'];
+    const pads=[['F#3','A3','D4'],['E3','A3','C#4'],['F#3','B3','D4'],['F#3','A3','C#4'],['G3','B3','D4'],['F#3','A3','D4'],['G3','B3','D4'],['E3','A3','C#4']];
+    const v1=['F#5','E5','D5','C#5','B4','A4','B4','C#5'];
+    const v2=['D5','C#5','B4','A4','G4','F#4','G4','E4'];
+    const v3='D5 F#5 A5 G5 F#5 D5 F#5 E5 D5 B4 D5 A5 G5 B5 A5 G5'.split(' ');
+    const cycles=5;
+    for (let c=0;c<cycles;c++){ const b0=c*16;
+      bass.forEach((nn,i)=>{ ev.push([b0+i*2,m(nn),2,.6,'strings']); pads[i].forEach(pn=>ev.push([b0+i*2,m(pn),2,.3,'strings'])); });
+      if (c>=1) v1.forEach((nn,i)=>ev.push([b0+i*2,m(nn),1.9,c===1?.5:.36,'piano']));
+      if (c>=2) v2.forEach((nn,i)=>ev.push([b0+i*2,m(nn)-(c>=3?12:0),1.9,.44,'piano']));
+      if (c>=3) v3.forEach((nn,i)=>ev.push([b0+i,m(nn),.95,.4,'piano']));
+    }
+    return {bpm:76, len:cycles*16, ev, gain:1.3};
+  })();
+
+  // 葛利格〈晨歌〉（6/8，以八分音符為拍）
+  T.morning = (()=>{ const ev=[];
+    const ph=[['G#5',2],['F#5',1],['E5',2],['D#5',1],['E5',2],['F#5',1],['G#5',2],['F#5',1],['E5',2],['D#5',1],['E5',2],['F#5',1],['G#5',2],['F#5',1],['G#5',2],['B5',1],['G#5',2],['B5',1],['C#6',2],['G#5',1],['C#6',2],['B5',1],['G#5',2],['F#5',1],['E5',6]];
+    for (let r=0;r<2;r++){ let b=r*48;
+      ph.forEach(([nn,d])=>{ ev.push([b,m(nn)-(r?12:0),d*.95,.7,r?'oboe':'flute']); b+=d; });
+      for (let bar=0;bar<8;bar++){ const t=r*48+bar*6; ev.push([t,m('E2'),6,.45,'strings']); ev.push([t,m('B2'),6,.3,'strings']);
+        ['E4','G#4','B4'].forEach((nn,i)=>ev.push([t+i*2,m(nn)-(bar%2?0:12),3,.22,'piano'])); }
+    }
+    return {bpm:156, len:96, ev, gain:1};
+  })();
+
+  /* ---- 排程 ---- */
+  function voice(dest,t,e){ const [ ,n,d,vel,v]=e, dur=d*cur.spb; if(v==='oboe') V.flute(dest,t,n,dur,vel,'oboe'); else V[v](dest,t,n,dur,vel); }
+  function tick(){
+    if (!cur || !ctx) return;
+    const ahead = ctx.currentTime + .3, def=cur.def;
+    while (true){
+      const e = def.ev[cur.i];
+      const t = cur.start + (cur.loop*def.len + e[0]) * cur.spb;
+      if (t > ahead) break;
+      if (t > ctx.currentTime - .05) voice(cur.g, Math.max(t, ctx.currentTime), e);
+      cur.i++;
+      if (cur.i >= def.ev.length){ cur.i=0; cur.loop++; }
+    }
+  }
+  Object.values(T).forEach(d=>d.ev.sort((a,b)=>a[0]-b[0]));
+
+  function play(id){
+    if (!T[id]) return;
+    if (cur && cur.id === id) return;
+    const prev = cur;
+    if (!ctx){ cur = {id, pending:true}; document.dispatchEvent(new CustomEvent('track', {detail:id})); return; }
+    if (prev && prev.g){ const g=prev.g; g.gain.cancelScheduledValues(ctx.currentTime); g.gain.setValueAtTime(g.gain.value, ctx.currentTime); g.gain.linearRampToValueAtTime(0, ctx.currentTime+1.6); setTimeout(()=>{ try{g.disconnect()}catch(e){} }, 4500); }
+    const def=T[id], g=ctx.createGain(); g.gain.setValueAtTime(0, ctx.currentTime); g.gain.linearRampToValueAtTime(def.gain||1, ctx.currentTime+2.4); g.connect(bus);
+    cur = {id, def, g, spb:60/def.bpm, start:ctx.currentTime+ (prev?1.0:.15), i:0, loop:0};
+    if (!timer) timer = setInterval(tick, 40);
+    document.dispatchEvent(new CustomEvent('track', {detail:id}));
+  }
+  function unlock(){
+    if (!init()) return false;
+    if (ctx.state === 'suspended') ctx.resume();
+    unlocked = true;
+    if (on){ master.gain.cancelScheduledValues(ctx.currentTime); master.gain.setValueAtTime(master.gain.value, ctx.currentTime); master.gain.linearRampToValueAtTime(.8, ctx.currentTime + 1.2); }
+    if (cur && cur.pending){ const id=cur.id; cur=null; play(id); }
+    return true;
+  }
+  function setOn(v){
+    on = v; if (!ctx) return;
+    master.gain.cancelScheduledValues(ctx.currentTime); master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+    master.gain.linearRampToValueAtTime(v ? .8 : 0, ctx.currentTime + .6);
+    if (v && ctx.state==='suspended') ctx.resume();
+  }
+  document.addEventListener('visibilitychange', ()=>{ if(!ctx) return; if(document.hidden) ctx.suspend(); else if(on) ctx.resume(); });
+  async function offline(id, secs){
+    const saved={ctx,bus,master,waves,cur}; const def=T[id];
+    ctx = new OfflineAudioContext(2, Math.floor(44100*secs), 44100); waves={};
+    const keep=ctx; const AC=window.AudioContext; window.AudioContext=function(){return keep}; const ok=(()=>{ const c=ctx; ctx=null; window.AudioContext=function(){return c}; return init(); })(); window.AudioContext=AC;
+    master.gain.value=.8; const g=ctx.createGain(); g.gain.value=def.gain||1; g.connect(bus);
+    cur={id,def,g,spb:60/def.bpm};
+    for (let loop=0; ; loop++){ let any=false; for (const e of def.ev){ const t=(loop*def.len+e[0])*cur.spb+.05; if (t<secs-.5){ voice(g,t,e); any=true; } } if(!any) break; }
+    const buf = await ctx.startRendering(); let pk=0, ss=0, n=0;
+    for (let c=0;c<2;c++){ const d=buf.getChannelData(c); for (let i=0;i<d.length;i++){ const v=Math.abs(d[i]); if(v>pk) pk=v; ss+=d[i]*d[i]; n++; if(isNaN(d[i])) return {nan:true}; } }
+    ({ctx,bus,master,waves,cur}=saved);
+    return {peak:+pk.toFixed(3), rms:+Math.sqrt(ss/n).toFixed(4)};
+  }
+  return { play, unlock, setOn, _offline:offline, get on(){return on}, get unlocked(){return unlocked}, get current(){return cur && cur.id}, _T:T, _m:m };
+})();
+
+/* ===== 遊戲引擎 ===== */
+(() => {
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const KEY = 'line21-v2';
+const store = { get(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }, set(v){ try{ localStorage.setItem(KEY, JSON.stringify(v)); }catch(e){} } };
+
+let G = null; // 本次旅程
+function newGame(name){ return {name, i:0, ch:{}, draws:0, fortune:null, pops:0, dose:20, pain:[], flips:0, quiz:{}, clues:0}; }
+
+/* ---------- 幾何元件渲染（SVG / Canvas 共用） ---------- */
+const LIGHT = {'--paper':'#E2E0D8','--paper-2':'#D5D2C8','--paper-3':'#C9C5BA','--ink':'#2E2D2A','--ink-soft':'#5B5852','--clay':'#A8655A','--ochre':'#C3A36A','--sage':'#94A08B','--slate':'#7A8B99','--rose':'#C6A49E','--plum':'#8B7983','--fog':'#B7B1A6'};
+const cv = c => `var(${c})`;
+function primSVG(p){
+  const [t,...a] = p;
+  if (t==='circle') return `<circle cx="${a[0]}" cy="${a[1]}" r="${a[2]}" fill="${cv(a[3])}"/>`;
+  if (t==='ring') return `<circle cx="${a[0]}" cy="${a[1]}" r="${a[2]}" fill="none" stroke="${cv(a[3])}" stroke-width="${a[4]}"/>`;
+  if (t==='poly') return `<polygon points="${a[0]}" fill="${cv(a[1])}"/>`;
+  if (t==='rect') return `<rect x="${a[0]}" y="${a[1]}" width="${a[2]}" height="${a[3]}" fill="${cv(a[4])}"${a[5]?` transform="rotate(${a[5]} ${a[0]+a[2]/2} ${a[1]+a[3]/2})"`:''}/>`;
+  if (t==='rrect') return `<rect x="${a[0]}" y="${a[1]}" width="${a[2]}" height="${a[3]}" rx="${a[4]}" fill="${cv(a[5])}" stroke="${cv(a[6])}" stroke-width="${a[7]}"/>`;
+  if (t==='path') return `<path d="${a[0]}" fill="${cv(a[1])}"/>`;
+  if (t==='line') return `<path d="${a[0]}" fill="none" stroke="${cv(a[1])}" stroke-width="${a[2]}" stroke-linejoin="miter"/>`;
+  if (t==='rot') return `<g transform="rotate(${a[0]} 50 50)">${a[1].map(primSVG).join('')}</g>`;
+  if (t==='g') return `<g transform="${a[0]}">${a[1].map(primSVG).join('')}</g>`;
+  return '';
+}
+function primCanvas(ctx, p){
+  const [t,...a] = p, col = c => LIGHT[c] || c;
+  ctx.save();
+  if (t==='circle'){ ctx.fillStyle=col(a[3]); ctx.beginPath(); ctx.arc(a[0],a[1],a[2],0,Math.PI*2); ctx.fill(); }
+  else if (t==='ring'){ ctx.strokeStyle=col(a[3]); ctx.lineWidth=a[4]; ctx.beginPath(); ctx.arc(a[0],a[1],a[2],0,Math.PI*2); ctx.stroke(); }
+  else if (t==='poly'){ const pts=a[0].split(' ').map(s=>s.split(',').map(Number)); ctx.fillStyle=col(a[1]); ctx.beginPath(); pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y)); ctx.closePath(); ctx.fill(); }
+  else if (t==='rect'){ ctx.fillStyle=col(a[4]); if(a[5]){ ctx.translate(a[0]+a[2]/2,a[1]+a[3]/2); ctx.rotate(a[5]*Math.PI/180); ctx.fillRect(-a[2]/2,-a[3]/2,a[2],a[3]); } else ctx.fillRect(a[0],a[1],a[2],a[3]); }
+  else if (t==='rrect'){ const [x,y,w,h,r]=a; ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); ctx.fillStyle=col(a[5]); ctx.fill(); ctx.strokeStyle=col(a[6]); ctx.lineWidth=a[7]; ctx.stroke(); }
+  else if (t==='path'){ ctx.fillStyle=col(a[1]); ctx.fill(new Path2D(a[0])); }
+  else if (t==='line'){ ctx.strokeStyle=col(a[1]); ctx.lineWidth=a[2]; ctx.lineJoin='miter'; ctx.stroke(new Path2D(a[0])); }
+  else if (t==='rot'){ ctx.translate(50,50); ctx.rotate(a[0]*Math.PI/180); ctx.translate(-50,-50); a[1].forEach(q=>primCanvas(ctx,q)); }
+  else if (t==='g'){ const m=/translate\(([-\d.]+) ([-\d.]+)\)(?: rotate\(([-\d.]+) ([-\d.]+) ([-\d.]+)\))? scale\(([-\d.]+)\)/.exec(a[0]);
+    ctx.translate(+m[1],+m[2]); if(m[3]){ ctx.translate(+m[4],+m[5]); ctx.rotate(+m[3]*Math.PI/180); ctx.translate(-m[4],-m[5]); } ctx.scale(+m[6],+m[6]); a[1].forEach(q=>primCanvas(ctx,q)); }
+  ctx.restore();
+}
+const tokenPrims = (id, k) => { const t = TOKENS[id]; return t.p(t.c['ABC'.indexOf(k)] || t.c[0]); };
+const tokenSVG = (id, k, cls='') => k ? `<svg class="${cls}" viewBox="0 0 100 100" aria-hidden="true">${tokenPrims(id,k).map(primSVG).join('')}</svg>`
+  : `<svg class="${cls}" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="30" fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-dasharray="7 7"/></svg>`;
+
+function posterPrims(type, ch){
+  const T = TYPES[type], [c0,c1] = T.c, P = [];
+  P.push(['rect',0,0,400,500,'--paper-2']);
+  if (T.G) P.push(['rect',40,46,236,236,c0,-6]); else P.push(['circle',176,176,134,c0]);
+  if (T.O) P.push(['poly','-20,320 420,190 420,236',c1]); else { P.push(['ring',306,318,64,c1,14]); P.push(['ring',306,318,30,c1,10]); }
+  if (T.F) P.push(['path','M150 500 a110 110 0 0 1 220 0z','--rose']); else { [0,1,2].forEach(i=>P.push(['rect',230,404+i*22,150,8,'--ink'])); }
+  P.push(['rect',-60,270,540,20,'--ink',-16]);
+  STATIONS.forEach((st,i)=>{ if(!ch[st.id]) return; const s=.62, x=26+i*60, y=392-i*20; P.push(['g',`translate(${x} ${y}) scale(${s})`, tokenPrims(st.id, ch[st.id])]); });
+  return P;
+}
+const posterSVG = (type, ch) => `<svg viewBox="0 0 400 500" aria-hidden="true">${posterPrims(type,ch).map(primSVG).join('')}</svg>`;
+
+/* ---------- 計分 ---------- */
+function score(g0){
+  let g=0,o=0,f=0;
+  STATIONS.forEach(st=>{ const c = st.choices.find(x=>x.k===g0.ch[st.id]); if(c){ g+=c.s[0]; o+=c.s[1]; f+=c.s[2]; } });
+  const range = g0.pain.length ? Math.max(...g0.pain)-Math.min(...g0.pain) : 2;
+  if (g0.draws >= 3) g++;
+  if (g0.pops >= 8) g++; else if (g0.pops === 0) g--;
+  if (range >= 4) f++; else if (range === 0) f--;
+  const Gx = g>=2 || (g===1 && g0.ch.anxiety==='A');
+  const Ox = o>=2 || (o===1 && g0.ch.depression==='A');
+  const Fx = f>=1 || (f===0 && g0.ch.love==='B');
+  const type = Object.keys(TYPES).find(k=>TYPES[k].G===+Gx && TYPES[k].O===+Ox && TYPES[k].F===+Fx);
+  let ep;
+  if (range>=5) ep = `痛感從 ${Math.min(...g0.pain)} 跳到 ${Math.max(...g0.pain)} 分的`;
+  else if (g0.pops>=10) ep = `戳破 ${g0.pops} 個萬一的`;
+  else if (g0.pops===0) ep = '一個萬一都沒戳的';
+  else if (g0.draws>=3) ep = `連抽 ${g0.draws} 支籤的`;
+  else if (g0.dose>=90) ep = `把劑量轉到 ${g0.dose} 的`;
+  else if (g0.dose<=3) ep = '把劑量歸零的';
+  else if (g0.flips===3) ep = '偷看完所有祕密的';
+  else if (g0.flips===0) ep = '一張都沒偷看的';
+  else ep = `帶著${g0.fortune ? g0.fortune.n : '一支籤'}的`;
+  return {type, ep};
+}
+
+/* ---------- 共用 UI ---------- */
+const app = $('#app');
+function show(html, track){ app.innerHTML = html; window.scrollTo(0,0); if (track) Music.play(track); hud(); }
+function hud(){
+  $('#hud').innerHTML = STATIONS.map(st=>`<span class="hole ${G && G.ch[st.id]?'on':''}" title="${st.name}">${G && G.ch[st.id] ? tokenSVG(st.id, G.ch[st.id]) : ''}</span>`).join('');
+}
+async function say(box, lines, cls='ln'){
+  let fast = false; const skip = () => fast = true; box.closest('.stage')?.addEventListener('click', skip, {once:true});
+  for (const l of lines){ const p = document.createElement('p'); p.className = cls; p.textContent = l; box.appendChild(p); if (!fast && !reduced) await wait(420 + l.length * 32); }
+}
+function into(el){ const y = el.getBoundingClientRect().top + window.scrollY - 96; if (y > window.scrollY + 40) window.scrollTo({top:y, behavior: reduced ? 'auto' : 'smooth'}); }
+function btn(label, cls='btn'){ const b = document.createElement('button'); b.className = cls; b.innerHTML = `<span>${label}</span><span class="arr">→</span>`; return b; }
+
+/* ---------- 封面 ---------- */
+function cover(){
+  const h = (location.hash||'').replace('#','');
+  const friend = h.startsWith('r-') && TYPES[h.slice(2)] ? TYPES[h.slice(2)] : null;
+  const last = store.get().last;
+  show(`<section class="wrap cover">
+    <div class="cover-art">${svg(ART.cover())}</div>
+    <div class="cover-copy">
+      ${friend?`<div class="friend"><span class="ftag">朋友的車票</span><b>${friend.name}</b><span>「${friend.essence}」</span><em>你會是哪一種夜行者？</em></div>`:''}
+      <div class="eyebrow">Last Train · 23:59</div>
+      <h1>二十一世紀線<em>LINE 21</em></h1>
+      <p class="lede">末班車就要開了。天亮之前，它會停六站：迷信、焦慮、解藥、疼痛、深夜，還有愛。</p>
+      <p class="lede small">每一站都有一件小事等著你。你怎麼反應，車票就怎麼打洞。到了終點，列車長會讀你的車票，告訴你：你是八種夜行者裡的哪一種。</p>
+      <form class="ticket-form" id="tf">
+        <label for="pname">乘客姓名（會印在你的結果卡上，可留空）</label>
+        <input id="pname" maxlength="12" autocomplete="off" placeholder="例如：小林" value="${esc(store.get().name||'')}">
+        <button class="btn" type="submit"><span>剪票上車</span><span class="arr">→</span></button>
+      </form>
+      <p class="note">約 6 分鐘。全程有古典音樂（網頁即時合成），右上角可關閉。${last && TYPES[last]?` 上次你是「${TYPES[last].name}」。`:''}</p>
+    </div></section>`, 'prelude');
+  $('#tf').addEventListener('submit', e=>{ e.preventDefault(); Music.unlock(); syncSound();
+    const name = $('#pname').value.trim(); store.set({...store.get(), name}); G = newGame(name); ride(0); });
+}
+
+/* ---------- 行駛過場 ---------- */
+async function ride(i){
+  const st = STATIONS[i];
+  const ov = document.createElement('div'); ov.className = 'ride'; ov.setAttribute('role','status');
+  ov.innerHTML = `<div class="ride-in"><div class="rtime">${st ? st.time : '05:52'}</div>
+    <div class="rtrack"><span class="rcar"></span></div>
+    <div class="rnext">下一站</div><div class="rname">${st ? st.name : '終點・黎明'}</div></div>`;
+  document.body.appendChild(ov);
+  if (st) Music.play(st.track);
+  let done = false; const go = () => { if (done) return; done = true; ov.classList.add('out'); setTimeout(()=>ov.remove(), 450); st ? station(i) : reveal(); };
+  ov.addEventListener('click', go);
+  await wait(reduced ? 400 : 2100); go();
+}
+
+/* ---------- 站點 ---------- */
+function station(i){
+  const st = STATIONS[i]; G.i = i;
+  show(`<section class="wrap station">
+    <div class="panel">${svg(ART[st.id]())}<span class="vtag">${st.time} · STATION ${st.no}</span>
+      <span class="vname" aria-hidden="true">${[...st.name].map(c=>`<i>${c}</i>`).join('')}</span><span class="vnum">${st.no}</span></div>
+    <div class="stage" id="stage">
+      <div class="st-head"><span class="eyebrow">第 ${st.no} 站 / 06</span><h2>${st.name}</h2>${st.care?`<p class="carenote">本站觸及憂鬱議題。需要說話時：安心專線 <b>1925</b>（24 小時）・生命線 <b>1995</b>・張老師 <b>1980</b></p>`:''}</div>
+      <div class="narr" id="narr"></div>
+      <div class="mg-slot" id="mg"></div>
+      <div class="choices" id="choices" hidden></div>
+      <div class="after" id="after"></div>
+    </div></section>`);
+  const narr = $('#narr');
+  say(narr, st.intro).then(()=> MINI[st.id](st));
+}
+
+function showChoices(st, onPick){
+  const box = $('#choices'); box.hidden = false;
+  box.innerHTML = `<p class="prompt">你會——</p>` + st.choices.map(c=>`<button class="choice" data-k="${c.k}"><span class="k">${c.k}</span><span class="t">${esc(c.t)}</span></button>`).join('');
+  into(box);
+  $$('.choice', box).forEach(b=>b.addEventListener('click', async ()=>{
+    const k = b.dataset.k; G.ch[st.id] = k;
+    $$('.choice', box).forEach(x=>{ x.disabled = true; x.classList.toggle('picked', x===b); });
+    hud(); $('#hud .hole:nth-child('+(STATIONS.indexOf(st)+1)+')')?.classList.add('punch');
+    const c = st.choices.find(x=>x.k===k);
+    if (onPick) await onPick(c);
+    await finish(st, c);
+  }));
+}
+async function finish(st, c){
+  const after = $('#after');
+  const re = document.createElement('div'); re.className = 'narr'; after.appendChild(re);
+  await say(re, c.re);
+  await debrief(st);
+  const i = STATIONS.indexOf(st);
+  const tk = document.createElement('div'); tk.className = 'stub';
+  tk.innerHTML = `<div class="stub-l">${tokenSVG(st.id, c.k)}<span>NO.${st.no}</span></div>
+    <div class="stub-r"><span class="stub-tag">車票背面印著一行小字</span><p>${st.stub.t}</p><span class="stub-b">${st.stub.b}</span></div>`;
+  after.appendChild(tk);
+  const b = btn(i < STATIONS.length-1 ? '回到車上' : '列車駛向終點');
+  const row = document.createElement('div'); row.className = 'actions'; row.appendChild(b); after.appendChild(row);
+  into(tk);
+  b.addEventListener('click', ()=> ride(i+1));
+}
+
+function debrief(st){
+  return new Promise(resolve=>{
+    const D = DEBRIEF[st.id], after = $('#after');
+    const box = document.createElement('div'); box.className = 'debrief';
+    box.innerHTML = `<div class="db-head"><span class="db-tag">解密時刻</span><span class="db-sub">剛才發生了什麼？</span></div>
+      <p class="db-you">${esc(D.you(G))}</p>
+      <div class="quiz"><p class="qz-q"><b>猜猜看</b>${D.quiz.q}</p>
+        <div class="qz-o">${D.quiz.o.map((o,k)=>`<button class="qz-b" data-k="${k}"><span>${'甲乙丙'[k]}</span>${o}</button>`).join('')}</div>
+        <div class="qz-ex" hidden></div></div>
+      <div class="clues" hidden><p class="cl-h">再解開三個「為什麼」</p>${D.clues.map((c,k)=>`<button class="clue" data-k="${k}" aria-expanded="false"><span class="cl-q"><i>?</i>${c.q(G)}</span><span class="cl-a">${c.a}</span></button>`).join('')}</div>`;
+    after.appendChild(box); into(box);
+    $$('.qz-b', box).forEach(b=>b.addEventListener('click', ()=>{
+      const k = +b.dataset.k, ok = k===D.quiz.a; G.quiz[st.id] = ok;
+      $$('.qz-b', box).forEach(x=>{ x.disabled = true; if (+x.dataset.k===D.quiz.a) x.classList.add('right'); else if (x===b) x.classList.add('wrong'); });
+      const ex = $('.qz-ex', box); ex.hidden = false; ex.innerHTML = `<b>${ok?'猜對了。':'答案是「'+D.quiz.o[D.quiz.a]+'」。'}</b>${D.quiz.ex}`;
+      const cl = $('.clues', box); cl.hidden = false;
+      $$('.clue', box).forEach(c=>c.addEventListener('click', ()=>{ if (!c.classList.contains('open')){ c.classList.add('open'); c.setAttribute('aria-expanded','true'); G.clues++; } }));
+      resolve();
+    }));
+  });
+}
+
+/* ---------- 六個小遊戲 ---------- */
+const MINI = {
+  superstition(st){
+    const mg = $('#mg');
+    mg.innerHTML = `<div class="fortune"><div class="machine" id="machine"><span class="mtop">求籤機</span><span class="mslot"></span><span class="mnote">明天的事，問我</span></div>
+      <div class="slip" id="slip" hidden></div></div><div class="actions"><button class="btn" id="shake"><span>投幣・搖一搖</span><span class="arr">↻</span></button></div>`;
+    let first = true, last = -1;
+    $('#shake').addEventListener('click', async e=>{
+      const b = e.currentTarget; b.disabled = true;
+      const m = $('#machine'); m.classList.remove('shake'); void m.offsetWidth; m.classList.add('shake');
+      await wait(reduced?50:850);
+      let k; do { k = Math.floor(Math.random()*FORTUNES.length); } while (k===last); last = k;
+      const f = FORTUNES[k]; G.fortune = f; G.draws++;
+      const slip = $('#slip'); slip.hidden = false; slip.classList.remove('drop'); void slip.offsetWidth; slip.classList.add('drop');
+      slip.innerHTML = `<span class="sn">${f.n}</span><span class="sg">${f.g}</span><span class="st">${f.t}</span>`;
+      b.disabled = false; b.querySelector('span').textContent = G.draws>=3 ? `已經抽了 ${G.draws} 支。再一支？` : '不滿意？再投一枚';
+      if (first){ first = false; await wait(500); showChoices(st, async ()=>{ b.remove(); }); }
+    });
+  },
+  anxiety(st){
+    const mg = $('#mg');
+    mg.innerHTML = `<div class="bubbles" id="bb"><div class="bb-hud"><span>列車進站倒數 <b id="cd">10</b></span><span>已戳破 <b id="pc">0</b></span></div><p class="bb-tip">戳破它們。</p></div>`;
+    const bb = $('#bb'); let t = 10, live = true, n = 0;
+    const spawn = (x, small) => {
+      if (bb.querySelectorAll('.bub').length > 18) return;
+      const w = document.createElement('button'); w.className = 'bub' + (small?' small':'');
+      w.textContent = WORRIES[n++ % WORRIES.length];
+      w.style.left = Math.max(2, Math.min(70, x ?? (4 + Math.random()*64))) + '%';
+      w.style.animationDuration = (6.5 + Math.random()*3) + 's';
+      w.addEventListener('animationend', ()=>w.remove());
+      w.addEventListener('click', ev=>{ ev.stopPropagation(); if (w.classList.contains('pop')) return; w.classList.add('pop'); G.pops++; $('#pc').textContent = G.pops; setTimeout(()=>w.remove(), 260);
+        if (live && Math.random() < .55){ const lx = parseFloat(w.style.left); spawn(lx-6, true); spawn(lx+8, true); bb.classList.add('multiply'); setTimeout(()=>bb.classList.remove('multiply'),600); } });
+      bb.appendChild(w);
+    };
+    spawn(); const iv = setInterval(()=>{ if (live) spawn(); }, 620);
+    const cd = setInterval(()=>{ t--; $('#cd') && ($('#cd').textContent = t);
+      if (t<=0){ clearInterval(cd); clearInterval(iv); live = false; bb.classList.add('arrived'); $('.bb-tip', bb).textContent = '列車進站了。泡泡還在。';
+        showChoices(st, async c=>{ if (c.k==='C' || c.k==='B') $$('.bub', bb).forEach(x=>x.classList.add('fade')); }); } }, 1000);
+  },
+  drugs(st){
+    const mg = $('#mg');
+    mg.innerHTML = `<div class="vend"><div class="caps"><span style="--c:var(--sage)">睡得著</span><span style="--c:var(--slate)">不緊張</span><span style="--c:var(--ochre)">忘記今天</span></div>
+      <svg class="dose" viewBox="0 0 320 170" aria-hidden="true"><line x1="20" y1="140" x2="310" y2="140" stroke="var(--ink)" stroke-width="2"/><line x1="20" y1="10" x2="20" y2="140" stroke="var(--ink)" stroke-width="2"/>
+        <path id="ce" fill="none" stroke="var(--sage)" stroke-width="4"/><path id="cs" fill="none" stroke="var(--clay)" stroke-width="4" stroke-dasharray="7 5"/>
+        <line id="mk" y1="10" y2="140" stroke="var(--ink)" stroke-width="2"/><text x="300" y="160" text-anchor="end" font-size="11" fill="var(--ink-soft)" font-family="sans-serif">劑量 →</text></svg>
+      <label class="dial" for="dose">劑量 <b id="dv">20</b></label><input type="range" id="dose" min="0" max="100" value="20">
+      <div class="readout"><span><i style="background:var(--sage)"></i>效果 <b id="re">0%</b></span><span><i style="background:var(--clay)"></i>副作用 <b id="rs">0%</b></span></div></div>`;
+    const E = d => 1/(1+Math.exp(-(d-42)/8)), Sd = d => 1/(1+Math.exp(-(d-74)/7));
+    const X = d => 20 + d*2.9, Y = v => 140 - v*124;
+    const curve = fn => Array.from({length:101},(_,d)=>`${d?'L':'M'}${X(d).toFixed(1)} ${Y(fn(d)).toFixed(1)}`).join(' ');
+    $('#ce').setAttribute('d', curve(E)); $('#cs').setAttribute('d', curve(Sd));
+    const upd = () => { const d = +$('#dose').value; G.dose = d; $('#dv').textContent = d; $('#mk').setAttribute('x1', X(d)); $('#mk').setAttribute('x2', X(d));
+      $('#re').textContent = Math.round(E(d)*100)+'%'; $('#rs').textContent = Math.round(Sd(d)*100)+'%'; };
+    $('#dose').addEventListener('input', upd); upd();
+    setTimeout(()=>showChoices(st), reduced?0:900);
+  },
+  pain(st){
+    const mg = $('#mg'); const labels = ['月台','終點線','深夜'];
+    const step = k => {
+      mg.innerHTML = `<div class="painq"><p class="pq">${PAIN_Q[k]}</p><div class="pnum" id="pn">5</div>
+        <input type="range" id="pr" min="0" max="10" value="5" aria-label="痛的分數"><div class="pscale"><span>0 不痛</span><span>10 最痛</span></div>
+        <div class="actions"><button class="btn" id="pok"><span>就這個分數</span><span class="arr">→</span></button></div></div>`;
+      $('#pr').addEventListener('input', e=>$('#pn').textContent = e.target.value);
+      $('#pok').addEventListener('click', ()=>{ G.pain[k] = +$('#pr').value; if (k<2) step(k+1); else done(); });
+      into(mg);
+    };
+    const done = () => {
+      mg.innerHTML = `<div class="painsum">${G.pain.map((v,k)=>`<div><span>${labels[k]}</span><b>${v}</b></div>`).join('')}</div>
+        <p class="ln">同一根腳趾，三個分數。</p>`;
+      showChoices(st);
+    };
+    step(0);
+  },
+  depression(st){
+    const mg = $('#mg');
+    mg.innerHTML = `<div class="phone"><div class="ph-top"><span class="av">遠</span><b>阿遠</b></div><div class="ph-body" id="pb">
+      <p class="day">8 月 14 日</p><p class="msg them">最近有點累，下次再約</p><p class="msg me">好啊，保重！</p>
+      <p class="day">兩個月後・03:00</p></div></div>`;
+    const pb = $('#pb');
+    const typing = async ms => { const t = document.createElement('p'); t.className = 'msg them typing'; t.innerHTML = '<i></i><i></i><i></i>'; pb.appendChild(t); await wait(reduced?100:ms); t.remove(); };
+    (async()=>{ await wait(600); await typing(2600); const s = document.createElement('p'); s.className='sys'; s.textContent='（阿遠停止輸入）'; pb.appendChild(s);
+      await wait(500);
+      showChoices(st, async c=>{ const me = document.createElement('p'); me.className='msg me'; me.textContent = c.t.replace(/^「|」$/g,'');
+        if (c.k==='B'){ me.className='sys'; me.textContent='你對阿遠的照片按了愛心。'; }
+        pb.appendChild(me); into(mg); await wait(900);
+        if (c.reply && c.reply.length){ await typing(1600); for (const r of c.reply){ const p=document.createElement('p'); p.className='msg them'; p.textContent=r; pb.appendChild(p); await wait(reduced?50:900); } }
+        if (c.sys){ await wait(1200); const p=document.createElement('p'); p.className='sys heart'; p.textContent=c.sys; pb.appendChild(p); }
+        await wait(500); });
+    })();
+  },
+  love(st){
+    const mg = $('#mg');
+    mg.innerHTML = `<div class="profile"><div class="pf-top"><span class="av big">澄</span><div><b>阿澄</b><span>契合度 <em>94%</em></span></div></div>
+      <div class="traits">${TRAITS.map((t,k)=>`<button class="trait" data-k="${k}"><span class="q">？</span><span class="a"><b>${t.h}</b>${t.t}</span></button>`).join('')}</div>
+      <p class="pf-tip">點一下，偷看對方的小祕密。</p></div>
+      <div class="actions"><button class="btn ghost" id="pfdone"><span>把手機收起來</span><span class="arr">→</span></button></div>`;
+    $$('.trait', mg).forEach(t=>t.addEventListener('click', ()=>{ if (!t.classList.contains('open')){ t.classList.add('open'); G.flips++; } }));
+    $('#pfdone').addEventListener('click', async e=>{ e.currentTarget.parentElement.remove(); $$('.trait', mg).forEach(t=>t.disabled=true);
+      const q = document.createElement('div'); q.className = 'narr'; mg.appendChild(q);
+      await say(q, ['列車晃了一下。對方忽然轉頭看著你——']);
+      const big = document.createElement('p'); big.className = 'bigq'; big.textContent = '「你為什麼喜歡我？」'; mg.appendChild(big);
+      await wait(reduced?0:700); showChoices(st); });
+  }
+};
+
+/* ---------- 終點：讀票 ---------- */
+async function reveal(){
+  const r = score(G); G.result = r;
+  store.set({...store.get(), last:r.type});
+  const ov = document.createElement('div'); ov.className = 'ride read';
+  ov.innerHTML = `<div class="ride-in"><div class="rtime">05:52</div><div class="rnext">列車長正在讀你的車票</div>
+    <div class="rtokens">${STATIONS.map((st,k)=>`<span style="animation-delay:${k*.18}s">${tokenSVG(st.id, G.ch[st.id])}</span>`).join('')}</div></div>`;
+  document.body.appendChild(ov);
+  Music.play(TYPES[r.type].track);
+  await wait(reduced ? 300 : 2600);
+  ov.classList.add('out'); setTimeout(()=>ov.remove(), 450);
+  result(r.type, r.ep);
+}
+
+/* ---------- 結果 ---------- */
+function kTitle(n){ return n>=6?'全對。你可以去當這班車的列車長了。':n>=4?'直覺很準，科學也站在你這邊。':n>=2?'有些研究結果跟你想的不一樣，這正是它們有趣的地方。':'大部分都猜錯了？很正常，這些研究之所以有名，就是因為結果出人意料。'; }
+function shareText(T, ep){ return `我在《二十一世紀線》末班車上，是「${ep}${T.name}」。\n「${T.essence}」\n你會是哪一種夜行者？ #二十一世紀線`; }
+function result(type, ep){
+  const T = TYPES[type], M = TYPES[T.match], bk = BOOKS[T.book], name = G.name || '無名乘客';
+  try{ history.replaceState(null, '', '#r-' + type); }catch(e){}
+  const url = ARTIFACT_URL + '#r-' + type, txt = shareText(T, ep);
+  const enc = encodeURIComponent;
+  show(`<section class="wrap result">
+    <div class="r-art"><div class="poster">${posterSVG(type, G.ch)}<span class="p-name">${esc(name)}</span><span class="p-en">${T.en}</span></div></div>
+    <div class="r-copy">
+      <div class="eyebrow">終點站・黎明 05:52 ・ ${esc(name)} 的車票判讀</div>
+      <p class="r-ep">${esc(ep)}</p>
+      <h1 class="r-name">${T.name}</h1>
+      <p class="r-quote">「${T.essence}」</p>
+      <p class="r-desc">${T.desc}</p>
+      <dl class="r-traits"><div><dt>你的光</dt><dd>${T.plus}</dd></div><div><dt>你的影子</dt><dd>${T.minus}</dd></div><div><dt>列車長留言</dt><dd>${T.line}</dd></div></dl>
+      <div class="share">
+        <p class="sh-h">把車票分享出去</p>
+        <div class="sh-row">
+          <button class="sh ig" id="ig"><span>IG 限動圖</span></button>
+          <a class="sh" target="_blank" rel="noopener" href="https://www.threads.com/intent/post?text=${enc(txt)}&url=${enc(url)}">Threads</a>
+          <a class="sh" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}">Facebook</a>
+          <a class="sh" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url=${enc(url)}&text=${enc(txt)}">LINE</a>
+          <button class="sh" id="copy">複製連結</button>
+        </div>
+        <p class="sh-msg" id="shmsg" aria-live="polite"></p>
+      </div>
+    </div></section>
+    <section class="wrap r-more">
+      <div class="card-row">
+        <div class="mini-card"><span class="mc-tag">你的主題曲・正在播放</span><b>${TRACKS_INFO[T.track].t}</b><span>${TRACKS_INFO[T.track].d}</span></div>
+        <div class="mini-card"><span class="mc-tag">列車長推薦你讀</span><b>${bk.z} ${bk.t}</b><span>${bk.a}・${bk.y}</span><p>${T.why}</p></div>
+        <div class="mini-card"><span class="mc-tag">最合拍的同行者</span><b>${M.name}</b><span>「${M.essence}」</span><p>你們朝同一個方向看，只是握方向盤的方式不同。</p></div>
+      </div>
+      <div class="kpass"><div><span>知識乘車證</span><b>${Object.values(G.quiz).filter(Boolean).length}<small>/6</small></b><em>猜對的研究</em></div><div><b>${G.clues}<small>/18</small></b><em>解開的「為什麼」</em></div><p>${kTitle(Object.values(G.quiz).filter(Boolean).length)}</p></div>
+      <h3 class="sec-h">你的六張車票</h3>
+      <ol class="tickets">${STATIONS.map(st=>{ const c = st.choices.find(x=>x.k===G.ch[st.id]); return `<li>${tokenSVG(st.id, G.ch[st.id])}<span class="tn">${st.no} ${st.name}</span><b>${c?c.tag:'—'}</b></li>`; }).join('')}</ol>
+      <details class="back"><summary>翻到車票背面：六本書與全部 24 則研究</summary>
+        <ul>${STATIONS.map(st=>{ const b = BOOKS[st.id], D = DEBRIEF[st.id]; return `<li><b>${st.name}・${b.z}</b><span>${b.t}｜${b.a}｜${b.y}</span><p>${st.stub.t}</p><details class="more"><summary>這一站的研究（${D.clues.length+1} 則）</summary><p><b>${D.quiz.q}</b> ${D.quiz.ex}</p>${D.clues.map(c=>`<p><b>${c.q(G)}</b> ${c.a}</p>`).join('')}</details></li>`; }).join('')}</ul>
+        <p class="note">六本書都是牛津大學出版社「A Very Short Introduction」系列。車上的音樂是公有領域樂曲，由網頁即時合成的改編片段。</p>
+      </details>
+      <h3 class="sec-h">八種夜行者</h3>
+      <div class="types">${Object.entries(TYPES).map(([k,t])=>`<div class="type ${k===type?'me':''} ${k===T.match?'mate':''}"><div class="ty-art">${posterSVG(k,{})}</div><b>${t.name}</b><span>${t.essence}</span>${k===type?'<em>你</em>':k===T.match?'<em>同行者</em>':''}</div>`).join('')}</div>
+      <p class="note care-foot">如果這趟夜車讓你想起某些難受的事：安心專線 1925（24 小時）・生命線 1995・張老師 1980。</p>
+      <div class="actions"><button class="btn" id="again"><span>再搭一次</span><span class="arr">↺</span></button></div>
+    </section>`);
+  $('#again').addEventListener('click', ()=>{ try{ history.replaceState(null,'',location.pathname + location.search); }catch(e){} G = null; cover(); });
+  $('#copy').addEventListener('click', async ()=>{ const m = $('#shmsg');
+    try{ await navigator.clipboard.writeText(txt + '\n' + url); m.textContent = '已複製連結和結果文字。'; }
+    catch(e){ m.innerHTML = `複製失敗，請手動選取：<input class="copybox" readonly value="${esc(url)}">`; $('.copybox').select(); } });
+  $('#ig').addEventListener('click', ()=> storyImage(type, ep, name));
+}
+
+/* ---------- IG 限動圖（1080×1920） ---------- */
+async function storyImage(type, ep, name){
+  const T = TYPES[type], msg = $('#shmsg'); msg.textContent = '正在印製你的車票圖……';
+  const W = 1080, H = 1920, c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+  const fam = '"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif', disp = '"Big Shoulders Display",sans-serif';
+  try{ await Promise.all([document.fonts.load(`900 120px ${fam}`, T.name+ep+name+'二十一世紀線你會是哪一種夜行者'), document.fonts.load(`500 40px ${fam}`, T.essence+T.line), document.fonts.load(`900 60px ${disp}`, 'LINE 21'+T.en)]); }catch(e){}
+  x.fillStyle = LIGHT['--paper']; x.fillRect(0,0,W,H);
+  x.save(); x.beginPath(); x.rect(108,170,864,1080); x.clip(); x.translate(108,170); x.scale(864/400, 864/400); posterPrims(type, G.ch).forEach(p=>primCanvas(x,p)); x.restore();
+  x.fillStyle = LIGHT['--ink']; x.fillRect(0,0,W,120);
+  x.fillStyle = LIGHT['--paper']; x.font = `900 52px ${disp}`; x.textBaseline = 'middle'; x.fillText('LINE 21', 64, 62);
+  x.font = `900 40px ${fam}`; x.textAlign = 'right'; x.fillText('二十一世紀線・末班車', W-64, 62); x.textAlign = 'left';
+  x.fillStyle = LIGHT['--clay']; x.fillRect(108,1080+170-14,864,14);
+  x.fillStyle = LIGHT['--ink-soft']; x.font = `500 40px ${fam}`; x.textBaseline = 'alphabetic';
+  x.fillText(`${name} 的車票判讀`, 108, 1340);
+  x.fillStyle = LIGHT['--clay']; x.font = `900 46px ${fam}`; wrap(x, ep, 108, 1410, 864, 56);
+  x.fillStyle = LIGHT['--ink']; x.font = `900 ${T.name.length>4?128:150}px ${fam}`; x.fillText(T.name, 100, 1590);
+  x.fillStyle = LIGHT['--ink-soft']; x.font = `900 44px ${disp}`; x.fillText(T.en, 108, 1662);
+  x.fillStyle = LIGHT['--ink']; x.font = `500 44px ${fam}`; wrap(x, `「${T.essence}」`, 108, 1752, 864, 60);
+  x.fillStyle = LIGHT['--ochre']; x.fillRect(0, H-110, W, 110);
+  x.fillStyle = LIGHT['--ink']; x.font = `900 40px ${fam}`; x.textBaseline='middle'; x.fillText('你會是哪一種夜行者？', 64, H-55);
+  x.font = `900 40px ${disp}`; x.textAlign='right'; x.fillText('#二十一世紀線', W-64, H-55);
+  const blob = await new Promise(r=>c.toBlob(r,'image/png'));
+  const dl = await (window.claude?.use ? window.claude.use('downloads').catch(()=>null) : null);
+  if (dl){
+    try{ await dl.save({filename:`line21-${type}.png`, data:blob}); msg.textContent = '已存好。打開 IG 限時動態，從相簿選這張圖，再貼上連結貼紙。'; return; }
+    catch(e){ if (e && e.code==='declined'){ msg.textContent = '已取消儲存。'; return; } }
+  }
+  const url = URL.createObjectURL(blob);
+  const md = document.createElement('div'); md.className = 'modal';
+  md.innerHTML = `<div class="modal-in"><img src="${url}" alt="${esc(T.name)} 結果圖"><p>長按（手機）或右鍵（電腦）圖片即可儲存，再到 IG 限時動態上傳。</p><button class="btn" id="mclose"><span>好</span></button></div>`;
+  document.body.appendChild(md); $('#mclose').addEventListener('click', ()=>md.remove()); msg.textContent = '';
+}
+function wrap(x, text, X, Y, maxW, lh){ let line = '', y = Y; for (const ch of text){ if (x.measureText(line+ch).width > maxW && line){ x.fillText(line, X, y); line = ch; y += lh; } else line += ch; } x.fillText(line, X, y); }
+
+/* ---------- 聲音 ---------- */
+const sb = $('#sound');
+function syncSound(){ sb.classList.toggle('on', Music.on && Music.unlocked); sb.setAttribute('aria-pressed', String(Music.on && Music.unlocked)); }
+document.addEventListener('track', e=>{ const info = TRACKS_INFO[e.detail]; $('#slbl').textContent = info ? info.t : ''; });
+sb.addEventListener('click', ()=>{ if (!Music.unlocked){ Music.unlock(); Music.setOn(true); } else Music.setOn(!Music.on); syncSound(); });
+$('#home').addEventListener('click', ()=>{ G = null; cover(); });
+window.__line21 = { score, TYPES };
+cover(); syncSound();
+})();
+</script>
+
+</body></html>
